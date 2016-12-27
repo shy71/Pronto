@@ -1,10 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Xml.Linq;
 using System.IO;
 using System.Xml.Serialization;
-using System.Reflection;
 
 namespace ProntoV2
 {
@@ -113,7 +109,7 @@ namespace ProntoV2
                              ManufacturerItemDescription = p.Element("ManufacturerItemDescription").Value,
                              UnitQty = p.Element("UnitQty").Value,
                              Quantity = float.Parse(p.Element("Quantity").Value),
-                             bIsWeighted = Convert.ToBoolean(p.Element("bIsWeighted").Value),
+                             bIsWeighted = bool.Parse(p.Element("bIsWeighted").Value),
                              UnitOfMeasure = p.Element("UnitOfMeasure").Value,                  //float
                              QtyInPackage = Convert.ToBoolean(p.Element("QtyInPackage").Value),
                              ItemPrice = Convert.ToInt32(p.Element("ItemPrice").Value),
@@ -128,6 +124,5 @@ namespace ProntoV2
             }
             return items;
         }
-
     }
 }
