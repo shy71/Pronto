@@ -12,10 +12,14 @@ namespace Pronto
     {
         public static void Addx<t>(this t a) where t : new()
         {
-            pathAttribute v = a.GetType().GetCustomAttribute<pathAttribute>();
-            XElement x = XElement.Load(typeof(t).GetCustomAttribute<pathAttribute>().path);
-            x.Add(a.t_to_xml());
-            x.Save(v.path);
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var filename = Path.Combine(documents, "purchaes.xml");
+            File.
+            File.WriteAllText(filename, "Write this text into a file!");
+            //pathAttribute v = a.GetType().GetCustomAttribute<pathAttribute>();
+            //XElement x = XElement.Load(typeof(t).GetCustomAttribute<pathAttribute>().path);
+            //x.Add(a.t_to_xml());
+            //x.Save(v.path);
         }
         public static void removex<t>(string key) where t : new()
         {
