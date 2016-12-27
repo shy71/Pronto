@@ -15,7 +15,6 @@ namespace Pronto
     [path(@"Products.xml","Product","Barcode")]
     class Product
     {
-       
         public string Barcode { get; set; }
         public string Manufacturer { get; set; }
         public string Description { get; set; }

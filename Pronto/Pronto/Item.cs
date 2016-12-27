@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Pronto
 {
-    public class Item
+    class Item
     {
         public DateTime PriceUpdateDate { get; set; }
         public string ItemCode { get; set; }
