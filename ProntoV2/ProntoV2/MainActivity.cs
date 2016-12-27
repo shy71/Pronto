@@ -11,8 +11,14 @@ namespace ProntoV2
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
-            Stream input = Assets.Open("prices.xml");
-            XmlTools.getAllItem(input);
+            StartActivity(typeof(PreviousShoppings));
+        }
+        public void TraslateXML()
+        {
+            Stream input = Assets.Open("my_asset.txt");
+
+            new LoadPrices().GetPricesList(input);
+             
         }
     }
 }

@@ -68,25 +68,5 @@ namespace ProntoV2
         //        FileStream fss;
         //        fss = new FileStream(v.path, FileMode.OpenOrCreate);
 
-        //        XmlSerializer xmlss = new XmlSerializer(typeof(List<t>));
-        //        List<t> r = (List<t>)xmlss.Deserialize(fss);
-        //        fss.Close();
-        //        return r;
-        //    }
-        //    static string get_key<t>(this t a)
-        //    {
-        //        return (string)a.GetType().GetProperty(a.GetType().GetCustomAttribute<pathAttribute>().key).GetValue(a);
-        //    }
-        //    static XElement t_to_xml<t>(this t a)
-        //    {
-        //        pathAttribute v = a.GetType().GetCustomAttribute<pathAttribute>();
-        //        XElement Root = new XElement(v.name);
-        //        foreach (var Product in a.GetType().GetProperties())
-        //        {
-        //            XElement x = new XElement(Product.Name, Product.GetValue(a));
-        //            Root.Add(x);
-        //        }
-        //        return Root;
-        //    }
-        //}
     }
+}

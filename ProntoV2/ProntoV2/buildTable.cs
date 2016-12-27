@@ -9,6 +9,7 @@ using Android.Content;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.IO;
 using SQLite;
 
 namespace ProntoV2
@@ -28,16 +29,24 @@ namespace ProntoV2
         }
 
 
-        public static void AddStock(SQLiteConnection db, string symbol, Item itm)
+        public static void AddItem(SQLiteConnection db, Item itm)
         {
             db.Insert(itm);
             Console.WriteLine(itm.ToString());
         }
 
-        // empty!!!!!!!!!!!!!!!!!!
-        public void buildItUp()
+        public void AddItem(Item itm)
         {
+            AddItem(conn, itm);
+        }
 
+        public void buildItUp(Stream strm)
+        {
+            LoadPrices myLoader = new LoadPrices();
+            foreach (var item in myLoader.GetPricesList(strm))
+            {
+                AddItem(item);
+            }
         }
 
         public IEnumerable<Item> GetProduction(string barcode)
