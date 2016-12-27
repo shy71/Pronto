@@ -20,7 +20,6 @@ namespace Pronto
 
         buildTable()
         {
-
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Item>();
