@@ -35,7 +35,7 @@ namespace ProntoV2
             items.Add(ipaa);
         }
 
-        public bool RemoveItem(Product p)
+        public bool RemoveItem(Item p)
         {
             foreach (var item in items)
             {
