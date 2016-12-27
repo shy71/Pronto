@@ -16,6 +16,14 @@ namespace Pronto
     {
         private String barcode;
 
+        private int price;
+
+        public int Price
+        {
+            set { price = value; }
+            get { return price; }
+        }
+
         public String Barcode
         {
             get { return barcode; }
