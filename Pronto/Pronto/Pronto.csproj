@@ -73,6 +73,7 @@
     <Compile Include="Products.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="Resources\readtable.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
