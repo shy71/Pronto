@@ -9,17 +9,64 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Pronto;
 
 namespace Pronto
 {
     class Purchase
     {
-        private Dictionary<Product, int> items;
+        private List<ItemsProdAndAmount> items = new List<ItemsProdAndAmount>();
 
-        public Dictionary<Product, int> Items
+        public List<ItemsProdAndAmount> GetItems()
         {
-            get { return items; }
-            set { items = value; }
+            return items;
+        }
+
+        public void AddItem(ItemsProdAndAmount ipaa)
+        {
+            foreach(var item in items)
+            {
+                if(item.Key.Equals(ipaa.Key))
+                {
+                    item.Amount += ipaa.Amount;
+                    return;
+                }
+            }
+            items.Add(ipaa);
+        }
+
+        public bool RemoveItem(Product p)
+        {
+            foreach (var item in items)
+            {
+                if (item.Key.Equals(p))
+                    if (item.Amount > 1)
+                    {
+                        item.Amount--;
+                        return true;
+                    }
+                    else if (item.Amount == 1)
+                    {
+                        items.Remove(item);
+                        return true;
+                    }
+                    else
+                        return false;
+            }
+            return false;
+        }
+
+        
+
+        
+        public int TotalItemsPrice()
+        {
+            int count = 0;
+            foreach (var item in items)
+                {
+                count += item.Key.Price * item.Amount;
+            }
+            return count;
         }   
 
         private int shopID;
