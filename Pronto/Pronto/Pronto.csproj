@@ -113,7 +113,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <AndroidAsset Include="Assets\xml\prices.xml" />
+    <AndroidAsset Include="Assets\xml\prices.xml">
+      <SubType>Designer</SubType>
+    </AndroidAsset>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\plus_icon.png" />
