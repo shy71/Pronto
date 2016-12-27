@@ -47,8 +47,7 @@ namespace ProntoV2
 
         public IEnumerable<Item> Search(string query)
         {
-            return conn.Table<Item>().Where(itm => itm.(query));
+            return conn.Table<Item>().Where(itm => itm.ManufacturerItemDescription.Contains(query));
         }
-
     }
 }
