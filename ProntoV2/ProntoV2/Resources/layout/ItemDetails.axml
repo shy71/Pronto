@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:gravity="right">
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Del" />
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center">
+    <ImageView
+        android:id="@+id/foodPic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/images" />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="במבה גודל קטן "
+        android:textStyle="bold"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/foodCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="אסם"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+      <TextView
+          android:id="@+id/pricePerUnit"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="130$ - "
+          android:textSize="20sp" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="מחיר ליחידה"
+          android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+      <TextView
+          android:id="@+id/totalPrice"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="130$ - "
+          android:textSize="20sp" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="כ&quot;הס"
+          android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+      <Button
+          android:id="@+id/minusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="-" />
+      <TextView
+          android:id="@+id/foodQTY"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="x5"
+          android:textSize="20sp" />
+      <Button
+          android:id="@+id/plusButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="+" />
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

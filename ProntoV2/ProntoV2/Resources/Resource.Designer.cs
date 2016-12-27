@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Pronto.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("ProntoV2.Resource", IsApplication=true)]
 
-namespace Pronto
+namespace ProntoV2
 {
 	
 	
@@ -26,9 +26,9 @@ namespace Pronto
 		
 		public static void UpdateIdValues()
 		{
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::Pronto.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Pronto.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Pronto.Resource.Layout.zxingscannerfragmentlayout;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::ProntoV2.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::ProntoV2.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::ProntoV2.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
