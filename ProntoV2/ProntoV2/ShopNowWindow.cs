@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -30,7 +29,7 @@ namespace ProntoV2
             main.AddView(item1);
             main.AddView(item2);
             // listView.AddView(item);
-
+            
         }
     }
 
