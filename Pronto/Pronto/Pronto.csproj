@@ -46,9 +46,6 @@
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="mscorlib" />
-    <Reference Include="SQLite-net">
-      <HintPath>..\..\..\..\..\Downloads\sqlite-net-1.0.11\lib\android\SQLite-net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
