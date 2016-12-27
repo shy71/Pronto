@@ -95,7 +95,7 @@ namespace ProntoV2
                 throw new Exception("File upload problem");
             }
         }
-        public List<Item> GetStudentList()
+        public List<Item> GetPricesList()
         {
             LoadData();
             List<Item> items;
