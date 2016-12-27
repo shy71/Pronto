@@ -42,7 +42,7 @@ namespace Pronto
                     where Product.get_key() == key
                     select Product).FirstOrDefault();
         }
-        public static IEnumerable<t> Get_Allx<t>(string path) where t : new()
+        public static IEnumerable<t> Get_Allx<t>() where t : new()
         {
             pathAttribute v = typeof(t).GetCustomAttribute<pathAttribute>();
             if (!new FileInfo(typeof(t).GetCustomAttribute<pathAttribute>().path).Exists)
@@ -55,7 +55,7 @@ namespace Pronto
                 return null;
             }
             FileStream fss;
-            fss = new FileStream(path, FileMode.OpenOrCreate);
+            fss = new FileStream(v.path, FileMode.OpenOrCreate);
             
             XmlSerializer xmlss = new XmlSerializer(typeof(List<t>));
             List<t> r = (List<t>)xmlss.Deserialize(fss);

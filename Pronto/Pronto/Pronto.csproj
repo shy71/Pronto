@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="buildTable.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Product.cs" />
