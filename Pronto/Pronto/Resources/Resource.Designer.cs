@@ -26,6 +26,9 @@ namespace Pronto
 		
 		public static void UpdateIdValues()
 		{
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::Pronto.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Pronto.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Pronto.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -57,11 +60,33 @@ namespace Pronto
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int contentFrame = 2131034112;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int zxingscanneractivitylayout = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int zxingscannerfragmentlayout = 2130903042;
 			
 			static Layout()
 			{
