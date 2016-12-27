@@ -26,9 +26,6 @@ namespace Pronto
 		
 		public static void UpdateIdValues()
 		{
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::Pronto.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Pronto.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Pronto.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
