@@ -9,6 +9,7 @@ using Android.Content;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.IO;
 using SQLite;
 
 namespace ProntoV2
@@ -39,11 +40,10 @@ namespace ProntoV2
             AddItem(conn, itm);
         }
 
-        // empty!!!!!!!!!!!!!!!!!!
-        public void buildItUp()
+        public void buildItUp(Stream strm)
         {
             LoadPrices myLoader = new LoadPrices();
-            foreach (var item in myLoader.GetPricesList())
+            foreach (var item in myLoader.GetPricesList(strm))
             {
                 AddItem(item);
             }
