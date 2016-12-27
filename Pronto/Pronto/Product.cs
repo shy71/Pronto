@@ -49,5 +49,10 @@ namespace Pronto
             }
         }
         int quantity;
+
+        public override string ToString()
+        {
+            return "barcode:"+barcode+ "; manufacturer:"+ manufacturer+"; description:"+description+";"
+        }
     }
 }
