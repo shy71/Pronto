@@ -24,7 +24,7 @@ namespace Pronto
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Product>();
-            conn.CreateTable<Products>();
+          //  conn.CreateTable<Products>();
         }
         
         
@@ -34,11 +34,21 @@ namespace Pronto
             Console.WriteLine(p.ToString());
         }
 
+        // empty!!!!!!!!!!!!!!!!!!
         public void buildItUp()
         {
 
         }
 
+        public IEnumerable<Product> GetProduction (string barcode)
+        {
+            return conn.Table<Product>().Where(p => p.Barcode == barcode);
+        }
 
+        public IEnumerable<Product> Search(string query)
+        {
+            return conn.Table<Product>().Where(p => p.Description.Contains(query));
+        }        
+            
     }
 }
