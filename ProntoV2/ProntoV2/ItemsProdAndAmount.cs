@@ -1,4 +1,4 @@
-    using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Pronto;
+using ProntoV2;
 
-namespace Pronto
+namespace ProntoV2
 {
     class ItemsProdAndAmount
     {

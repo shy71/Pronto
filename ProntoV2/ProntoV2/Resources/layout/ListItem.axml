@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  <ImageView
+      android:id="@+id/foodIcon"
+      android:src="@drawable/images"
+      android:layout_width="75dp"
+      android:layout_height="75dp" />
+  <LinearLayout
+      android:id="@+id/detailsFood"
+      android:orientation="vertical"
+      android:layout_width="wrap_content"
+      android:layout_marginTop="5dp"
+      android:layout_marginLeft="20dp"
+      android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Israel" />
+    <TextView
+        android:id="@+id/foodCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Zion" />
+  </LinearLayout>
+  <TextView
+      android:id="@+id/pricePerUnit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="15dp"
+      android:layout_marginLeft="10dp"
+      android:textSize="30dp"
+      android:textStyle="bold"
+      android:text="150$" />
+  <TextView
+      android:id="@+id/qty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="15dp"
+      android:layout_marginLeft="15dp"
+      android:textSize="25dp"
+      android:text="x5" />
+</LinearLayout>
