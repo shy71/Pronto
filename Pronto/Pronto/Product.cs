@@ -12,36 +12,16 @@ using Android.Widget;
 
 namespace Pronto
 {
+    [path(@"Products.xml","Product","Barcode")]
     class Product
     {
-        private String barcode;
-
-        private int price;
-
-        public int Price
+       
+        public string Barcode { get; set; }
+        public string Manufacturer { get; set; }
+        public string Description { get; set; }
+        public override string ToString()
         {
-            set { price = value; }
-            get { return price; }
-        }
-
-        public String Barcode
-        {
-            get { return barcode; }
-            set { barcode = value; }
-        }
-        private String manufacturer;
-
-        public String Manufacturer
-        {
-            get { return manufacturer; }
-            set { manufacturer = value; }
-        }
-        private String description;
-
-        public String Description
-        {
-            get { return description; }
-            set { description = value; }
+            return "barcode:"+Barcode+ "; manufacturer:"+ Manufacturer+"; description:"+Description;
         }
     }
 }

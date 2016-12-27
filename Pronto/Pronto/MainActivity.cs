@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 
+using System;
 namespace Pronto
 {
     [Activity(Label = "Pronto", MainLauncher = true, Icon = "@drawable/icon")]
@@ -12,7 +13,9 @@ namespace Pronto
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
+           // StartActivity(typeof(ShopNowWindow));
+
         }
     }
 }
