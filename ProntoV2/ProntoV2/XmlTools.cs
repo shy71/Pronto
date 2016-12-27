@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace ProntoV2
 {
-    static class XmlTools
+    /*static class XmlTools
     {
         public static void Addx<t>(this t a) where t : new()
         {
@@ -78,20 +78,7 @@ namespace ProntoV2
             return Root;
         }
     }
-    [AttributeUsage(AttributeTargets.Class)]
-    public class pathAttribute : Attribute
-    {
-        public string key;
-        public string name;
-        public string path { get; set; }
-        public pathAttribute(string p, string n, string k)
-        {
-            path = @"Assets/xml/" + p;
-            name = n;
-            key = k;
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-        }
-    }
+   */
 
     public class LoadPrices
     {
