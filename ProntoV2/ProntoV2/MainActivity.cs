@@ -1,9 +1,6 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
-using Java.IO;
 using System.IO;
-
 namespace ProntoV2
 {
     [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon")]
@@ -14,7 +11,8 @@ namespace ProntoV2
             base.OnCreate(bundle);
             TraslateXML();
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView (Resource.Layout.Main);
+            StartActivity(typeof(PreviousShoppings));
         }
         public void TraslateXML()
         {

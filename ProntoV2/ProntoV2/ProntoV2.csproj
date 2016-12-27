@@ -71,6 +71,10 @@
     <Compile Include="Item.cs" />
     <Compile Include="ItemsProdAndAmount.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="PreviousItemPreview.cs" />
+    <Compile Include="PreviousShoppings.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Products.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="PurchaseManager.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -95,6 +99,21 @@
     <AndroidResource Include="Resources\layout\ShopNowWindow.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\PreviousShoppingPreview.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PreviousShoppings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PreviousShoppingDetails.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PreviousItemPreview.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ReviewCheckout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -117,7 +136,7 @@
     <AndroidResource Include="Resources\drawable\plus_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\xml\prices.xml" />
+    <AndroidAsset Include="Assets\prices.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
