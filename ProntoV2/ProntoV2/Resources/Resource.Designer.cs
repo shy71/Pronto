@@ -26,9 +26,6 @@ namespace ProntoV2
 		
 		public static void UpdateIdValues()
 		{
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::ProntoV2.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::ProntoV2.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::ProntoV2.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -68,9 +65,6 @@ namespace ProntoV2
 		
 		public partial class Id
 		{
-			
-			// aapt resource value: 0x7f05000e
-			public const int contentFrame = 2131034126;
 			
 			// aapt resource value: 0x7f050000
 			public const int deleteButton = 2131034112;
@@ -138,12 +132,6 @@ namespace ProntoV2
 			
 			// aapt resource value: 0x7f030003
 			public const int ShopNowWindow = 2130903043;
-			
-			// aapt resource value: 0x7f030004
-			public const int zxingscanneractivitylayout = 2130903044;
-			
-			// aapt resource value: 0x7f030005
-			public const int zxingscannerfragmentlayout = 2130903045;
 			
 			static Layout()
 			{
