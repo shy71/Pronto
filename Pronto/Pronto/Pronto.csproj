@@ -75,6 +75,8 @@
     <Compile Include="Purchase.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
     <Compile Include="XmlTools.cs" />
     <Compile Include="View1.cs" />
   </ItemGroup>
