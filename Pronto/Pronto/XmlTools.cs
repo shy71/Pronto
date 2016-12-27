@@ -5,82 +5,10 @@ using System.Xml.Linq;
 using System.IO;
 using System.Xml.Serialization;
 using System.Reflection;
+
 namespace Pronto
 {
-    class item
-    {
-        ZXing.Result barcode;
-        public ZXing.Result Barcode
-        {
-            get
-            {
-                return barcode;
-            }
-
-            set
-            {
-                barcode = value;
-            }
-        }
-
-        public int Quantity
-        {
-            get
-            {
-                return quantity;
-            }
-
-            set
-            {
-                quantity = value;
-            }
-        }
-        int quantity;
-        public item(ZXing.Result b,int q)
-        {
-            barcode = b;
-            quantity = q;
-        }
-        public item(){}
-    }
-    [path(@"items.xml", "item","barcode")]
-    class items
-    {
-        List<item> cart=new List<item>();
-        public
-         void add(item i)
-        {
-            foreach (var item in cart)
-            {
-                if (item.Barcode == i.Barcode)
-                {
-                    item.Quantity += i.Quantity;
-                    return;
-                }
-                   
-            }
-            i.Addx();
-            cart.Add(i);
-        }
-        void add(ZXing.Result b, int q)
-        {
-            add(new item(b, q));
-        }
-        List<item> get_all()
-        {
-            return cart;
-        }
-        item get_last()
-        {
-            return cart.Last();
-        }
-        List<item> getAllFromXml()
-        {
-            return xmltools.Get_Allx<item>().ToList<item>();
-        }
-    }
-
-    static class xmltools
+    static class XmlTools
     {
         public static void Addx<t>(this t a) where t : new()
         {
@@ -107,9 +35,9 @@ namespace Pronto
         public static t get_t<t>(string key) where t : new()
         {
             var v = Get_Allx<t>();
-            return (from item in v
-                    where item.get_key() == key
-                    select item).FirstOrDefault();
+            return (from Product in v
+                    where Product.get_key() == key
+                    select Product).FirstOrDefault();
         }
         public static IEnumerable<t> Get_Allx<t>() where t : new()
         {
@@ -138,9 +66,9 @@ namespace Pronto
         {
             pathAttribute v = a.GetType().GetCustomAttribute<pathAttribute>();
             XElement Root = new XElement(v.name);
-            foreach (var item in a.GetType().GetProperties())
+            foreach (var Product in a.GetType().GetProperties())
             {
-                XElement x = new XElement(item.Name, item.GetValue(a));
+                XElement x = new XElement(Product.Name, Product.GetValue(a));
                 Root.Add(x);
             }
             return Root;
