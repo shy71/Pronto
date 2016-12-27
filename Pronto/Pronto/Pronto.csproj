@@ -21,6 +21,8 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -139,6 +141,7 @@
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Media.Compat.25.1.0-beta1\build\Xamarin.Android.Support.Media.Compat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Media.Compat.25.1.0-beta1\build\Xamarin.Android.Support.Media.Compat.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Fragment.25.1.0-beta1\build\Xamarin.Android.Support.Fragment.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Fragment.25.1.0-beta1\build\Xamarin.Android.Support.Fragment.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.v4.25.1.0-beta1\build\Xamarin.Android.Support.v4.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.v4.25.1.0-beta1\build\Xamarin.Android.Support.v4.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <Import Project="..\packages\Xamarin.Build.Download.0.4.0\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.0\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.1.0-beta1\build\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.1.0-beta1\build\Xamarin.Android.Support.Compat.targets')" />
@@ -147,6 +150,7 @@
   <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.25.1.0-beta1\build\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.25.1.0-beta1\build\Xamarin.Android.Support.Media.Compat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Fragment.25.1.0-beta1\build\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.25.1.0-beta1\build\Xamarin.Android.Support.Fragment.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v4.25.1.0-beta1\build\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.25.1.0-beta1\build\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
 		<Target Name="BeforeBuild">

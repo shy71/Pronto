@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using SQLite;
 
-namespace Pronto
+namespace ProntoV2
 {
     class buildTable
     {
@@ -24,13 +24,13 @@ namespace Pronto
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Item>();
             
-            
-           //conn.CreateTable<Product>();
-          //  conn.CreateTable<Products>();
+
+            //conn.CreateTable<Product>();
+            //  conn.CreateTable<Products>();
         }
-        
-        
-        public static void AddStock(SQLiteConnection db, string symbol,Product p)
+
+
+        public static void AddStock(SQLiteConnection db, string symbol, Product p)
         {
             db.Insert(p);
             Console.WriteLine(p.ToString());
@@ -42,7 +42,7 @@ namespace Pronto
 
         }
 
-        public IEnumerable<Product> GetProduction (string barcode)
+        public IEnumerable<Product> GetProduction(string barcode)
         {
             return conn.Table<Product>().Where(p => p.Barcode == barcode);
         }
@@ -50,7 +50,7 @@ namespace Pronto
         public IEnumerable<Product> Search(string query)
         {
             return conn.Table<Product>().Where(p => p.Description.Contains(query));
-        }        
-            
+        }
+
     }
 }
