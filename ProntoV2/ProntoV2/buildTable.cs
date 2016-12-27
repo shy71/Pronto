@@ -28,16 +28,25 @@ namespace ProntoV2
         }
 
 
-        public static void AddStock(SQLiteConnection db, string symbol, Item itm)
+        public static void AddItem(SQLiteConnection db, Item itm)
         {
             db.Insert(itm);
             Console.WriteLine(itm.ToString());
         }
 
+        public void AddItem(Item itm)
+        {
+            AddItem(conn, itm);
+        }
+
         // empty!!!!!!!!!!!!!!!!!!
         public void buildItUp()
         {
-
+            LoadPrices myLoader = new LoadPrices();
+            foreach (var item in myLoader.GetPricesList())
+            {
+                AddItem(item);
+            }
         }
 
         public IEnumerable<Item> GetProduction(string barcode)
