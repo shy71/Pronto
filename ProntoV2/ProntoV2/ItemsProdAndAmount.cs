@@ -15,25 +15,13 @@ namespace ProntoV2
 {
     class ItemsProdAndAmount
     {
-        public ItemsProdAndAmount(Product p, int am)
+        public ItemsProdAndAmount(Item p, int am)
         {
-            key = p;
-            amount = am;
+            Key = p;
+            Amount = am;
         }
 
-        private Product key;
-        private int amount;
-
-        public Product Key
-        {
-            set { key = value; }
-            get { return key; }
-        }
-
-        public int Amount
-        {
-            set { amount = value; }
-            get { return amount; }
-        }
+        public Item Key { get; set; }
+        public int Amount { get; set; }
     }
 }
