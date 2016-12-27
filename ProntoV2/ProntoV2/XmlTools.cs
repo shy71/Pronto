@@ -92,4 +92,55 @@ namespace ProntoV2
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
         }
     }
+
+    public class LoadPrices
+    {
+        private XElement pricesRoot;
+        private string pricesPath = @"prices.xml";//="???"
+        private void LoadData()
+        {
+            try
+            {
+                pricesRoot = XElement.Load(pricesPath);//check what is the path
+            }
+            catch
+            {
+                throw new Exception("File upload problem");
+            }
+        }
+        public List<Item> GetStudentList()
+        {
+            LoadData();
+            List<Item> items;
+            try
+            {
+                items = (from p in pricesRoot.Elements()
+                         select new Item()
+                         {
+                             PriceUpdateDate = Convert.ToDateTime(p.Element("PriceUpdateDate").Value),
+                             ItemCode = p.Element("ItemCode").Value,
+                             ItemType = Convert.ToBoolean(p.Element("ItemType").Value),
+                             ItemName = p.Element("ItemName").Value,
+                             ManufactureCountry = p.Element("ManufactureCountry").Value,
+                             ManufacturerName = p.Element("ManufacturerName").Value,
+                             ManufacturerItemDescription = p.Element("ManufacturerItemDescription").Value,
+                             UnitQty = p.Element("UnitQty").Value,
+                             Quantity = float.Parse(p.Element("Quantity").Value),
+                             bIsWeighted = Convert.ToBoolean(p.Element("bIsWeighted").Value),
+                             UnitOfMeasure = p.Element("UnitOfMeasure").Value,                  //float
+                             QtyInPackage = Convert.ToBoolean(p.Element("QtyInPackage").Value),
+                             ItemPrice = Convert.ToInt32(p.Element("ItemPrice").Value),
+                             UnitOfMeasurePrice = float.Parse(p.Element("UnitOfMeasurePrice").Value),        //float
+                             AllowDiscount = Convert.ToBoolean(p.Element("AllowDiscount").Value),
+                             ItemStatus = Convert.ToBoolean(p.Element("ItemStatus").Value)
+                         }).ToList();
+            }
+            catch
+            {
+                items = null;
+            }
+            return items;
+        }
+
+    }
 }
