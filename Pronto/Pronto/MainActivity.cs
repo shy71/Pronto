@@ -3,9 +3,6 @@ using Android.Widget;
 using Android.OS;
 
 using System;
-using Java.IO;
-using System.IO;
-
 namespace Pronto
 {
     [Activity(Label = "Pronto", MainLauncher = true, Icon = "@drawable/icon")]
