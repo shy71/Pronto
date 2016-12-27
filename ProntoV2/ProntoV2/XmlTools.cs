@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace ProntoV2
 {
-    static class XmlTools
+    /*static class XmlTools
     {
         public static void Addx<t>(this t a) where t : new()
         {
@@ -78,18 +78,56 @@ namespace ProntoV2
             return Root;
         }
     }
-    [AttributeUsage(AttributeTargets.Class)]
-    public class pathAttribute : Attribute
+   */
+
+    public class LoadPrices
     {
-        public string key;
-        public string name;
-        public string path { get; set; }
-        public pathAttribute(string p, string n, string k)
+        private XElement pricesRoot;
+        private string pricesPath = @"prices.xml";//="???"
+        private void LoadData()
         {
-            path = @"Assets/xml/" + p;
-            name = n;
-            key = k;
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            try
+            {
+                pricesRoot = XElement.Load(pricesPath);//check what is the path
+            }
+            catch
+            {
+                throw new Exception("File upload problem");
+            }
         }
+        public List<Item> GetPricesList()
+        {
+            LoadData();
+            List<Item> items;
+            try
+            {
+                items = (from p in pricesRoot.Elements()
+                         select new Item()
+                         {
+                             PriceUpdateDate = Convert.ToDateTime(p.Element("PriceUpdateDate").Value),
+                             ItemCode = p.Element("ItemCode").Value,
+                             ItemType = Convert.ToBoolean(p.Element("ItemType").Value),
+                             ItemName = p.Element("ItemName").Value,
+                             ManufactureCountry = p.Element("ManufactureCountry").Value,
+                             ManufacturerName = p.Element("ManufacturerName").Value,
+                             ManufacturerItemDescription = p.Element("ManufacturerItemDescription").Value,
+                             UnitQty = p.Element("UnitQty").Value,
+                             Quantity = float.Parse(p.Element("Quantity").Value),
+                             bIsWeighted = Convert.ToBoolean(p.Element("bIsWeighted").Value),
+                             UnitOfMeasure = p.Element("UnitOfMeasure").Value,                  //float
+                             QtyInPackage = Convert.ToBoolean(p.Element("QtyInPackage").Value),
+                             ItemPrice = Convert.ToInt32(p.Element("ItemPrice").Value),
+                             UnitOfMeasurePrice = float.Parse(p.Element("UnitOfMeasurePrice").Value),        //float
+                             AllowDiscount = Convert.ToBoolean(p.Element("AllowDiscount").Value),
+                             ItemStatus = Convert.ToBoolean(p.Element("ItemStatus").Value)
+                         }).ToList();
+            }
+            catch
+            {
+                items = null;
+            }
+            return items;
+        }
+
     }
 }

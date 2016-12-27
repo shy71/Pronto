@@ -30,7 +30,7 @@ namespace ProntoV2
             return (List<Purchase>)formatter.Deserialize(stream);
         }
 
-        private void Save(List<Product> listofa, string path)
+        private void Save(List<ItemsProdAndAmount> listofa, string path)
         {
             FileStream outFile = File.Create(path);
             XmlSerializer formatter = new XmlSerializer(typeof(Purchase));

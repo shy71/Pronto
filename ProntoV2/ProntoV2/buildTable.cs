@@ -23,34 +23,40 @@ namespace ProntoV2
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Item>();
-            
-
             //conn.CreateTable<Product>();
             //  conn.CreateTable<Products>();
         }
 
 
-        public static void AddStock(SQLiteConnection db, string symbol, Product p)
+        public static void AddItem(SQLiteConnection db, Item itm)
         {
-            db.Insert(p);
-            Console.WriteLine(p.ToString());
+            db.Insert(itm);
+            Console.WriteLine(itm.ToString());
+        }
+
+        public void AddItem(Item itm)
+        {
+            AddItem(conn, itm);
         }
 
         // empty!!!!!!!!!!!!!!!!!!
         public void buildItUp()
         {
-
+            LoadPrices myLoader = new LoadPrices();
+            foreach (var item in myLoader.GetPricesList())
+            {
+                AddItem(item);
+            }
         }
 
-        public IEnumerable<Product> GetProduction(string barcode)
+        public IEnumerable<Item> GetProduction(string barcode)
         {
-            return conn.Table<Product>().Where(p => p.Barcode == barcode);
+            return conn.Table<Item>().Where(itm => itm.ItemCode == barcode);
         }
 
-        public IEnumerable<Product> Search(string query)
+        public IEnumerable<Item> Search(string query)
         {
-            return conn.Table<Product>().Where(p => p.Description.Contains(query));
+            return conn.Table<Item>().Where(itm => itm.ManufacturerItemDescription.Contains(query));
         }
-
     }
 }
