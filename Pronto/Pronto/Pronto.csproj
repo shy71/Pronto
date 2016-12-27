@@ -74,6 +74,9 @@
     <Compile Include="Product.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopNowWindow.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
     <Compile Include="XmlTools.cs" />
     <Compile Include="View1.cs" />
   </ItemGroup>
@@ -83,6 +86,12 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\ListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ShopNowWindow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ItemDetails.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

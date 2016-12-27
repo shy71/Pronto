@@ -52,7 +52,7 @@ namespace Pronto
 
         public override string ToString()
         {
-            return "barcode:"+barcode+ "; manufacturer:"+ manufacturer+"; description:"+description+";"
+            return "barcode:" + barcode + "; manufacturer:" + manufacturer + "; description:" + description + ";";
         }
     }
 }

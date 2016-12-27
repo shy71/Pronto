@@ -26,6 +26,9 @@ namespace Pronto
 		
 		public static void UpdateIdValues()
 		{
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::Pronto.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Pronto.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Pronto.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -66,6 +69,9 @@ namespace Pronto
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050007
+			public const int contentFrame = 2131034119;
+			
 			// aapt resource value: 0x7f050001
 			public const int detailsFood = 2131034113;
 			
@@ -77,6 +83,9 @@ namespace Pronto
 			
 			// aapt resource value: 0x7f050002
 			public const int foodName = 2131034114;
+			
+			// aapt resource value: 0x7f050006
+			public const int main = 2131034118;
 			
 			// aapt resource value: 0x7f050004
 			public const int pricePerUnit = 2131034116;
@@ -98,10 +107,22 @@ namespace Pronto
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int ListItem = 2130903040;
+			public const int ItemDetails = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int ListItem = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int ShopNowWindow = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int zxingscanneractivitylayout = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int zxingscannerfragmentlayout = 2130903045;
 			
 			static Layout()
 			{
