@@ -20,6 +20,7 @@ namespace ProntoV2
        
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ActionBar.Hide();
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.ShopNowWindow);

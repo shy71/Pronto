@@ -17,6 +17,7 @@ namespace ProntoV2
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ActionBar.Hide();
             base.OnCreate(savedInstanceState);
             
             SetContentView(Resource.Layout.ItemDetails);
@@ -62,6 +63,7 @@ namespace ProntoV2
         }
         protected override void OnStop()
         {
+            base.OnStop();
             ManageShoppingItems.Refresh();
         }
     }
