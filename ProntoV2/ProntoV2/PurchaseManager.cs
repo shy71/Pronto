@@ -50,6 +50,7 @@ namespace ProntoV2
                 str += item.Key.ItemCode + "," + item.Amount;
             }
             str += listofa.ShopID;
+            
             outputStream.Write(str);
             outputStream.Close();
         }

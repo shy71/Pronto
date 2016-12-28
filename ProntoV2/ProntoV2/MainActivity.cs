@@ -65,9 +65,10 @@ namespace ProntoV2
         public void TestSQL()
         {
             Test myTest = new Test();
-            myTest.Create();
+           // myTest.Create();
 
             Item itm = myTest.GetProduction("7296014048203").First();
+
             
         }
     }

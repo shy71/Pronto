@@ -46,5 +46,7 @@ namespace ProntoV2
             return conn.Table<Item>().Where(itm => itm.ManufacturerItemDescription.Contains(query));
         }
 
+         
+
     }
 }
