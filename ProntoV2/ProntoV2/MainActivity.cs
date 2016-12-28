@@ -12,14 +12,27 @@ namespace ProntoV2
             TraslateXML();
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
+            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
+           
             StartActivity(typeof(PreviousShoppings));
         }
         public void TraslateXML()
         {
+            /*
             Stream input = Assets.Open("prices.xml");
 
             new LoadPrices().GetPricesList(input);
-             
+            */
+            Purchase p = new Purchase();
+            Item t = new Item();
+            t.ItemName = "king";
+            t.ItemPrice = 2;
+            ItemsProdAndAmount i = new ItemsProdAndAmount(t, 5);
+            p.AddItem(i);
+
+            PurchesManager pm = new PurchesManager();
+            pm.Save(p, "buyNumberOne");
+            
         }
     }
 }
