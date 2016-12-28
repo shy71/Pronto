@@ -14,23 +14,24 @@ namespace ProntoV2
     {
         protected override void OnCreate(Bundle bundle)
         {
+            ActionBar.Hide();
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
-            PHPGetter.PHPGet();
+          //  PHPGetter.PHPGet();
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
-            buildTable.Create();
-            TraslateXML();
-            Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
-            if(!File.Exists(buildTable.getDBPath()))
-            {
-                StreamReader input = new StreamReader(Assets.Open("ProntoDB.db"));
-                using (StreamWriter outputFile = new StreamWriter(buildTable.getDBPath()))
-                {
-                    input.BaseStream.CopyToAsync(outputFile.BaseStream);
-                }
-            }
+            //buildTable.Create();
+            //TraslateXML();
+            //Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
+            //if(!File.Exists(buildTable.getDBPath()))
+            //{
+            //    StreamReader input = new StreamReader(Assets.Open("ProntoDB.db"));
+            //    using (StreamWriter outputFile = new StreamWriter(buildTable.getDBPath()))
+            //    {
+            //        input.BaseStream.CopyToAsync(outputFile.BaseStream);
+            //    }
+            //}
 
             FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
         }

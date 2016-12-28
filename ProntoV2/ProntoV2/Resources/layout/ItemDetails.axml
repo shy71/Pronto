@@ -28,11 +28,13 @@
             android:src="@drawable/ShoppingIcon" />
         <TextView
             android:id="@+id/description"
+            android:scrollHorizontally="true"
             android:textColor="@android:color/darker_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="במבה גודל קטן "
+            android:scrollbars="horizontal"
+            android:text="במבה 67 קטן "
             android:textStyle="bold"
             android:textSize="30sp" />
         <TextView
@@ -54,14 +56,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="130$ - "
+                android:text="130 - "
                 android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:textColor="@android:color/darker_gray"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="מחיר ליחידה"
+                android:text="מחיר ליחידה "
                 android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
@@ -75,7 +77,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="130$ - "
+                android:text="4.5"
+                android:textSize="20sp" />
+            <TextView
+                android:textColor="@android:color/darker_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="₪ - "
                 android:textSize="20sp" />
             <TextView
                 android:layout_width="wrap_content"
