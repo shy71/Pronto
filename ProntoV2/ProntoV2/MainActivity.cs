@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -15,10 +16,31 @@ namespace ProntoV2
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
-            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
 
             TraslateXML();
-           
+
+            FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
+        }
+        private async void OpenBarcode(object sender, EventArgs e)
+        {
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            var result = await scanner.Scan();
+            if (result != null)
+            {
+                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+                dlgAlert.SetMessage("This is an alert with no consequence");
+                dlgAlert.SetTitle("App Title");
+                dlgAlert.SetPositiveButton("Retry", (s, ee) => OpenBarcode(sender, e));
+                dlgAlert.SetCancelable(true);
+                dlgAlert.Create().Show();
+                //readDataBase
+                StartActivity(typeof(ShopNowWindow));
+            }
+            else
+                return;
+
+
+
         }
         public void TraslateXML()
         {
