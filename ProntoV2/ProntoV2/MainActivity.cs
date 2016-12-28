@@ -17,6 +17,7 @@ namespace ProntoV2
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
+            buildTable.Create();
             TraslateXML();
 
             FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
