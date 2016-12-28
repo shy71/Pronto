@@ -9,7 +9,7 @@
         android:textColor="@android:color/darker_gray"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:hint="תעודת זהות"
@@ -20,53 +20,71 @@
         android:textColor="@android:color/darker_gray"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:textColorHint="@android:color/darker_gray"
         android:hint="מספר כרטיס אשראי"
         android:textSize="25dp" />
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/linearLayout1">
         <Spinner
+            android:layout_marginTop="9dp"
             android:id="@+id/monthSpinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-             android:background="@android:color/darker_gray"/>
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="@android:color/darker_gray" />
         <TextView
+            android:layout_marginTop="9dp"
             android:textColor="@android:color/darker_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="/"
             android:textStyle="bold"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/textView1" />
         <Spinner
+            android:layout_marginTop="9dp"
             android:id="@+id/daySpinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:background="@android:color/darker_gray"/>
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray" />
         <TextView
+            android:layout_marginTop="9dp"
             android:textColor="@android:color/darker_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="תוקף"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/textView2" />
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/space1" />
         <EditText
             android:textColor="@android:color/darker_gray"
             android:id="@+id/securityText"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
+            android:gravity="right"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:layout_height="wrap_content"  
+            android:layout_height="wrap_content"
             android:textColorHint="@android:color/darker_gray"
-            android:hint="קוד סודי" />
+            android:textSize="20sp"
+            android:hint="ספרות ביקורת" />
     </LinearLayout>
     <Button
       android:id="@+id/sendBtn"
         android:textColor="@android:color/darker_gray"
         android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:text="שלח" />
+        android:text="שלם" />
 </LinearLayout>

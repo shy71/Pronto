@@ -5,47 +5,49 @@
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:id="@+id/previewDetail">
-    <TextView
-        android:text="תאריך"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/date" />
-    <TextView
-        android:text="שם חנות"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/brand" />
-    <TextView
-        android:text="סניף"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/store" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+    <LinearLayout>
         <TextView
-            android:text="130$ "
+            android:text="תאריך"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/price" />
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/date" />
         <TextView
-            android:text=" - "
+            android:text="שם חנות"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/brand" />
         <TextView
-            android:text="סכום "
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="סניף"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/store" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:text="130$ "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price" />
+            <TextView
+                android:text=" - "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="סכום "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
