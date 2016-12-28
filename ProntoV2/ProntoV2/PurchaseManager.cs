@@ -27,7 +27,7 @@ namespace ProntoV2
             Purchase pur = new Purchase();
             int i = 0;
             for ( i = 0; i < array.Length-1; i += 2)
-                pur.AddItem(new ItemsProdAndAmount(new buildTable().GetProduction(array[i]).First(), Convert.ToInt32(array[i + 1])));
+                pur.AddItem(new ItemsProdAndAmount(buildTable.GetProduction(array[i]).First(), Convert.ToInt32(array[i + 1])));
             pur.ShopID =Convert.ToInt32( array.Last());
             return pur;
         }
