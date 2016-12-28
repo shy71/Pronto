@@ -167,10 +167,10 @@ namespace ProntoV2
                              UnitQty = p.Element("UnitQty").Value,
                              Quantity = float.Parse(p.Element("Quantity").Value),
                              bIsWeighted = bool.Parse(p.Element("bIsWeighted").Value),
-                             UnitOfMeasure = p.Element("UnitOfMeasure").Value,                  //float
+                             UnitOfMeasure = p.Element("UnitOfMeasure").Value,
                              QtyInPackage = Convert.ToBoolean(p.Element("QtyInPackage").Value),
                              ItemPrice = Convert.ToInt32(p.Element("ItemPrice").Value),
-                             UnitOfMeasurePrice = float.Parse(p.Element("UnitOfMeasurePrice").Value),        //float
+                             UnitOfMeasurePrice = float.Parse(p.Element("UnitOfMeasurePrice").Value),
                              AllowDiscount = Convert.ToBoolean(p.Element("AllowDiscount").Value),
                              ItemStatus = Convert.ToBoolean(p.Element("ItemStatus").Value)
                          }).ToList();
