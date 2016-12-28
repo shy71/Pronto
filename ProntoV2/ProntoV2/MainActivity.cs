@@ -4,56 +4,44 @@ using Android.Util;
 using System;
 using System.IO;
 using System.Linq;
+using ZXing.Mobile;
 
 
 namespace ProntoV2
 {
-    [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon",ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
+            ActionBar.Hide();
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
+            PHPGetter.PHPGet();
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
-            buildTable.Create();
-            TraslateXML();
-            Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
-            if(!File.Exists(buildTable.getDBPath()))
-            {
-                StreamReader input = new StreamReader(Assets.Open("ProntoDB.db"));
-                using (StreamWriter outputFile = new StreamWriter(buildTable.getDBPath()))
-                {
-                    input.BaseStream.CopyToAsync(outputFile.BaseStream);
-                }
-            }
+            //buildTable.Create();
+            //TraslateXML();
+            //Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
+            //if(!File.Exists(buildTable.getDBPath()))
+            //{
+            //    StreamReader input = new StreamReader(Assets.Open("ProntoDB.db"));
+            //    using (StreamWriter outputFile = new StreamWriter(buildTable.getDBPath()))
+            //    {
+            //        input.BaseStream.CopyToAsync(outputFile.BaseStream);
+            //    }
+            //}
 
             FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
         }
         private async void OpenBarcode(object sender, EventArgs e)
         {
-            StartActivity(typeof(ShopNowWindow));
-            //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            //scanner.TopText = "Scan Store QR";
-            //var result = await scanner.Scan();
-            //if (result != null)
-            //{
-            //    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
-            //    dlgAlert.SetMessage("This is an alert with no consequence");
-            //    dlgAlert.SetTitle("App Title");
-            //    dlgAlert.SetPositiveButton("Retry", (s, ee) => OpenBarcode(sender, e));
-            //    dlgAlert.SetCancelable(true);
-            //    dlgAlert.Create().Show();
-            //    //readDataBase
-            //    StartActivity(typeof(ShopNowWindow));
-            //}
-            //else
-            //    return;
 
+            StartActivity(typeof(ShopNowWindow));
 
         }
+
         public void TraslateXML()
         {
             /*

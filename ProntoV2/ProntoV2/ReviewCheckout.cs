@@ -17,6 +17,7 @@ namespace ProntoV2
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ActionBar.Hide();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ReviewCheckout);
             ((Spinner)FindViewById(Resource.Id.daySpinner)).Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, Enumerable.Range(1, 31).Select(x=>x.ToString()).ToList());

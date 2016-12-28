@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Com.Syncfusion.Numericupdown;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -17,18 +17,23 @@ namespace ProntoV2
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ActionBar.Hide();
             base.OnCreate(savedInstanceState);
+            
             SetContentView(Resource.Layout.ItemDetails);
             string barcode = Intent.GetStringExtra("ItemCode") ?? "Data not available";
             string qty = Intent.GetStringExtra("ItemQty") ?? "Data not available";
             
             Item item=buildTable.GetProduction(barcode).FirstOrDefault();
-            Toast.MakeText(Application.Context,"Could not found barcode",ToastLength.Short);
-            Finish();
+            if (item == null)
+            {
+                Toast.MakeText(Application.Context, "Could not found barcode", ToastLength.Short);
+                Finish();
+            }
             ((TextView)FindViewById(Resource.Id.description)).Text = item.ItemName;
             ((TextView)FindViewById(Resource.Id.foodCompany)).Text = item.ManufacturerName;
             ((TextView)FindViewById(Resource.Id.pricePerUnit)).Text = item.ItemPrice.ToString();
-            ((TextView)FindViewById(Resource.Id.qty)).Text = qty;
+            ((TextView)FindViewById(Resource.Id.foodQTY)).Text = qty;
             ((TextView)FindViewById(Resource.Id.plusButton)).Click += (s, e) =>
             {
                 ManageShoppingItems.plusAmunt(item);
@@ -58,6 +63,7 @@ namespace ProntoV2
         }
         protected override void OnStop()
         {
+            base.OnStop();
             ManageShoppingItems.Refresh();
         }
     }

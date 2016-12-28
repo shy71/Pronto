@@ -12,7 +12,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:hint="תעודת זהות"
+        android:text="תעודת זהות"
         android:textSize="25dp" />
     <EditText
         android:id="@+id/creditCardNum"
@@ -21,14 +21,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:hint="מספר כרטיס אשראי"
+        android:text="מספר כרטיס אשראי"
         android:textSize="25dp" />
     <LinearLayout
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Spinner
-            
             android:id="@+id/monthSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -40,7 +39,6 @@
             android:textStyle="bold"
             android:textSize="20sp" />
         <Spinner
-            
             android:id="@+id/daySpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -57,12 +55,12 @@
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:hint="קוד סודי" />
+            android:text="קוד סודי" />
     </LinearLayout>
     <Button
         android:textColor="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:text="רכוש" />
+        android:text="שלח" />
 </LinearLayout>
