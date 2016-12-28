@@ -19,7 +19,7 @@ namespace ProntoV2
         {
             Stream input = Assets.Open("prices.xml");
 
-            new LoadPrices().GetPricesList(input);
+            //new LoadPrices().GetPricesList(input);
              
         }
     }

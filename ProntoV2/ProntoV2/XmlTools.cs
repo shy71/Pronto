@@ -136,21 +136,21 @@ namespace ProntoV2
     public class LoadPrices
     {
         private XElement pricesRoot;
-       
-        private void LoadData(Stream strm)
+        private string pricesPath = @"xml/cprices.xml";//="???"
+        private void LoadData()
         {
             try
             {
-                pricesRoot = XElement.Load(strm);//check what is the path
+                pricesRoot = XElement.Load(pricesPath);//check what is the path
             }
             catch
             {
                 throw new Exception("File upload problem");
             }
         }
-        public List<Item> GetPricesList(Stream strm)
+        public List<Item> GetPricesList()
         {
-            LoadData(strm);
+            LoadData();
             List<Item> items;
             try
             {
