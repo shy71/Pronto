@@ -21,8 +21,8 @@ namespace ProntoV2
             SetContentView(Resource.Layout.ItemDetails);
             string barcode = Intent.GetStringExtra("ItemCode") ?? "Data not available";
             string qty = Intent.GetStringExtra("ItemQty") ?? "Data not available";
-            var conn=new buildTable();
-            Item item=conn.GetProduction(barcode).FirstOrDefault();
+            
+            Item item=buildTable.GetProduction(barcode).FirstOrDefault();
             Toast.MakeText(Application.Context,"Could not found barcode",ToastLength.Short);
             Finish();
             ((TextView)FindViewById(Resource.Id.description)).Text = item.ItemName;
