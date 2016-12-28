@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Util;
 using System;
 using System.IO;
 using System.Linq;
@@ -8,7 +9,7 @@ using ZXing.Mobile;
 
 namespace ProntoV2
 {
-    [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon",ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -18,6 +19,18 @@ namespace ProntoV2
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
+            buildTable.Create();
+            TraslateXML();
+            Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
+            if(!File.Exists(buildTable.getDBPath()))
+            {
+                StreamReader input = new StreamReader(Assets.Open("ProntoDB.db"));
+                using (StreamWriter outputFile = new StreamWriter(buildTable.getDBPath()))
+                {
+                    input.BaseStream.CopyToAsync(outputFile.BaseStream);
+                }
+            }
+
             FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
         }
         private async void OpenBarcode(object sender, EventArgs e)

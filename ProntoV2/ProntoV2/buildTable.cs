@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +11,11 @@ using Android.Views;
 using Android.Widget;
 using System.IO;
 using SQLite;
+using Java.IO;
 
 namespace ProntoV2
 {
-    class buildTable
+    public class buildTable
     {
         static string folder;
         static SQLiteConnection conn;
@@ -31,20 +32,25 @@ namespace ProntoV2
         public static void Initialize()
         {
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
+            conn = new SQLiteConnection(Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Item>();
             Create();
             //conn.CreateTable<Product>();
             //  conn.CreateTable<Products>(); }
         }
 
+        public static string getDBPath()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "myAmmazingApp.db");
+        }
+
         public static void Close() { conn.Close();folder = string.Empty; }
          
         public static void Create()
         {
-            Item itm1 = new Item("7296014048203", true, "tishu", "haznazuzi", "israel", "nice tishu", "pieces", 2, false, true, "gram", 24, 12, true, true);
-            Item itm2 = new Item("013495113537", true, "klik", "elit", "israel", "klik white and brown", "100 g", 2, false, true, "gram", 10, (float)9.4, true, true);
-            Item itm3 = new Item("729001370255", true, "schweps", "haznazuzi", "italy", "good shweps drink", "100 ml", 2, false, true, "ml", 12, 3, true, true);
+            Item itm1 = new Item("7290000066318", true, "במבה 80 גרם", "אסם", "IL", "במבה", "גרמים", 80.00, false, false, "100 גרם", 4.50, 5.63, true, true);
+            Item itm2 = new Item("13495113537", true, "קליק חום לבן מעורב 75 גר", "יוניליוור", "IL", "קליק מעורב", "גרמים", 75.00, false, false, "100 גרם", 5.90, 7.87 , true, true);
+            Item itm3 = new Item("7290011051396", true, "שוופס אפרסק מוגז 1.5ליטר", "יפאורה שותפות מובגלת לשיווק", "IL", "שוופס אפרסק", "ליטרים",1.50, false, false, "ליטר", 6.50, 4.33, true, true);
             buildTable.AddItem(itm1);
             buildTable.AddItem(itm2);
             buildTable.AddItem(itm3);
@@ -53,7 +59,6 @@ namespace ProntoV2
         public static void AddItem(Item itm)
         {
             conn.Insert(itm);
-            Console.WriteLine(itm.ToString());
         }
 
         public static void buildItUp(Stream strm)
