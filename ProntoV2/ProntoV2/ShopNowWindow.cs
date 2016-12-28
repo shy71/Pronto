@@ -62,12 +62,12 @@ namespace ProntoV2
             ((TextView)view.FindViewById(Resource.Id.foodName)).Text = (item.ManufacturerItemDescription.Length > 15) ? item.ManufacturerItemDescription.Substring(0, 15) : item.ManufacturerItemDescription;
             ((TextView)view.FindViewById(Resource.Id.foodCompany)).Text = (item.ManufacturerName.Length > 15) ? item.ManufacturerName.Substring(0, 15) : item.ManufacturerName;
             ((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text = item.ItemPrice.ToString() + '¤';
-            ((TextView)view.FindViewById(Resource.Id.foodQTY)).Text = amount.ToString();
+            ((TextView)view.FindViewById(Resource.Id.qty)).Text = amount.ToString();
             view.Click += (e, s) =>
             {
                 var activity2 = new Intent(this, typeof(ItemDetails));
                 activity2.PutExtra("ItemCode", item.ItemCode);
-                activity2.PutExtra("ItemQty", Convert.ToInt32(((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text));
+                activity2.PutExtra("ItemQty", ((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text);
                 StartActivity(activity2);
             };
             ((LinearLayout)FindViewById(Resource.Id.main)).AddView(view);
