@@ -18,6 +18,7 @@ namespace ProntoV2
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
+            buildTable.Create();
             TraslateXML();
             Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
             if(!File.Exists(buildTable.getDBPath()))
@@ -35,7 +36,7 @@ namespace ProntoV2
         {
             StartActivity(typeof(ShopNowWindow));
             //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            //scanner.TopText = "scan market qr";
+            //scanner.TopText = "Scan Store QR";
             //var result = await scanner.Scan();
             //if (result != null)
             //{
