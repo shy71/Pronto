@@ -91,6 +91,7 @@
     <Compile Include="XmlTools.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\ProntoDB.db" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />

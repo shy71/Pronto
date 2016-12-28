@@ -16,19 +16,29 @@ namespace ProntoV2
 {
     class buildTable
     {
-        string folder;
-        SQLiteConnection conn;
+        static string folder;
+        static SQLiteConnection conn;
 
-        public buildTable()
+        buildTable()
         {
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Item>();
             //conn.CreateTable<Product>();
             //  conn.CreateTable<Products>();
-            this.Create();
         }
 
+        public static void Initialize()
+        {
+            folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
+            conn.CreateTable<Item>();
+            //conn.CreateTable<Product>();
+            //  conn.CreateTable<Products>(); }
+        }
+
+        public void Close() { conn.Close();folder = string.Empty; }
+         
         public void Create()
         {
             Item itm1 = new Item("7296014048203", true, "tishu", "haznazuzi", "israel", "nice tishu", "pieces", 2, false, true, "gram", 24, 12, true, true);
@@ -39,19 +49,13 @@ namespace ProntoV2
             buildTable.AddItem(conn, itm3);
         }
 
-
-        public static void AddItem(SQLiteConnection db, Item itm)
+        public static void AddItem(Item itm)
         {
-            db.Insert(itm);
+            conn.Insert(itm);
             Console.WriteLine(itm.ToString());
         }
 
-        public void AddItem(Item itm)
-        {
-            AddItem(conn, itm);
-        }
-
-        public void buildItUp(Stream strm)
+        public static void buildItUp(Stream strm)
         {
             LoadPrices myLoader = new LoadPrices();
             foreach (var item in myLoader.GetPricesList(strm))
@@ -60,12 +64,12 @@ namespace ProntoV2
             }
         }
 
-        public IEnumerable<Item> GetProduction(string barcode)
+        public static IEnumerable<Item> GetProduction(string barcode)
         {
             return conn.Table<Item>().Where(itm => itm.ItemCode == barcode);
         }
 
-        public IEnumerable<Item> Search(string query)
+        public static IEnumerable<Item> Search(string query)
         {
             return conn.Table<Item>().Where(itm =>itm.ManufactureCountry.Contains(query) || itm.ManufacturerItemDescription.Contains(query) || itm.ManufacturerName.Contains(query) );
         }

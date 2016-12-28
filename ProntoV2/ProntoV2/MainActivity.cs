@@ -24,6 +24,7 @@ namespace ProntoV2
         private async void OpenBarcode(object sender, EventArgs e)
         {
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            scanner.TopText = "scan market qr";
             var result = await scanner.Scan();
             if (result != null)
             {
