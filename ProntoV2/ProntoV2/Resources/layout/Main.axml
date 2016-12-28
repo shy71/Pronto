@@ -7,5 +7,40 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="@android:color/white">
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <ImageButton
+              android:id="@+id/historyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/History"
+                android:background="@android:color/transparent"
+                android:layout_weight="0.20" />
+          <ImageButton
+            android:id="@+id/shopNowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="150dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ShopNow"
+                android:layout_weight="0.20"
+                android:background="@android:color/transparent"
+                />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

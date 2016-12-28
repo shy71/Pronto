@@ -51,13 +51,31 @@ namespace ProntoV2
 			public const int add_green = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int Camera = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int images = 2130837506;
+			public const int Done = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int plus_icon = 2130837507;
+			public const int History = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int Icon = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int images = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int logo = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int plus_icon = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int ShopNow = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int ShoppingIcon = 2130837513;
 			
 			static Drawable()
 			{
@@ -72,26 +90,26 @@ namespace ProntoV2
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060019
-			public const int addBtn = 2131099673;
+			// aapt resource value: 0x7f06001d
+			public const int addBtn = 2131099677;
 			
-			// aapt resource value: 0x7f060010
-			public const int brand = 2131099664;
+			// aapt resource value: 0x7f060013
+			public const int brand = 2131099667;
+			
+			// aapt resource value: 0x7f06001c
+			public const int checkoutBtn = 2131099676;
+			
+			// aapt resource value: 0x7f06001e
+			public const int contentFrame = 2131099678;
+			
+			// aapt resource value: 0x7f060018
+			public const int creditCardNum = 2131099672;
+			
+			// aapt resource value: 0x7f060012
+			public const int date = 2131099666;
 			
 			// aapt resource value: 0x7f06001a
-			public const int checkoutBtn = 2131099674;
-			
-			// aapt resource value: 0x7f06001b
-			public const int contentFrame = 2131099675;
-			
-			// aapt resource value: 0x7f060015
-			public const int creditCardNum = 2131099669;
-			
-			// aapt resource value: 0x7f06000f
-			public const int date = 2131099663;
-			
-			// aapt resource value: 0x7f060017
-			public const int daySpinner = 2131099671;
+			public const int daySpinner = 2131099674;
 			
 			// aapt resource value: 0x7f060000
 			public const int deleteButton = 2131099648;
@@ -117,26 +135,32 @@ namespace ProntoV2
 			// aapt resource value: 0x7f060007
 			public const int foodQTY = 2131099655;
 			
-			// aapt resource value: 0x7f060014
-			public const int idText = 2131099668;
+			// aapt resource value: 0x7f06000e
+			public const int historyBtn = 2131099662;
+			
+			// aapt resource value: 0x7f060017
+			public const int idText = 2131099671;
 			
 			// aapt resource value: 0x7f06000d
-			public const int main = 2131099661;
+			public const int imageView1 = 2131099661;
+			
+			// aapt resource value: 0x7f060010
+			public const int main = 2131099664;
 			
 			// aapt resource value: 0x7f060006
 			public const int minusButton = 2131099654;
 			
-			// aapt resource value: 0x7f060016
-			public const int monthSpinner = 2131099670;
+			// aapt resource value: 0x7f060019
+			public const int monthSpinner = 2131099673;
 			
 			// aapt resource value: 0x7f060008
 			public const int plusButton = 2131099656;
 			
-			// aapt resource value: 0x7f060013
-			public const int previewDetail = 2131099667;
+			// aapt resource value: 0x7f060016
+			public const int previewDetail = 2131099670;
 			
-			// aapt resource value: 0x7f060012
-			public const int price = 2131099666;
+			// aapt resource value: 0x7f060015
+			public const int price = 2131099669;
 			
 			// aapt resource value: 0x7f060004
 			public const int pricePerUnit = 2131099652;
@@ -144,14 +168,17 @@ namespace ProntoV2
 			// aapt resource value: 0x7f06000c
 			public const int qty = 2131099660;
 			
-			// aapt resource value: 0x7f060018
-			public const int securityText = 2131099672;
-			
-			// aapt resource value: 0x7f06000e
-			public const int shopDetail = 2131099662;
+			// aapt resource value: 0x7f06001b
+			public const int securityText = 2131099675;
 			
 			// aapt resource value: 0x7f060011
-			public const int store = 2131099665;
+			public const int shopDetail = 2131099665;
+			
+			// aapt resource value: 0x7f06000f
+			public const int shopNowButton = 2131099663;
+			
+			// aapt resource value: 0x7f060014
+			public const int store = 2131099668;
 			
 			// aapt resource value: 0x7f060005
 			public const int totalPrice = 2131099653;
