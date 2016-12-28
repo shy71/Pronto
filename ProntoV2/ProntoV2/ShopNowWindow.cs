@@ -27,6 +27,7 @@ namespace ProntoV2
             ManageShoppingItems.SetActivtiy(this);
             Refresh();
             //FindViewById(Resource.Id.addBtn).Click += null;
+            Toast.MakeText(Application.Context, Intent.GetStringExtra("StoreMsg") ?? "Data not available", ToastLength.Short);
             FindViewById(Resource.Id.checkoutBtn).Click += (s, e) => StartActivity(typeof(ReviewCheckout));
             MobileBarcodeScanner.Initialize(Application);
             FindViewById(Resource.Id.addBtn).Click += OpenBarcode;
