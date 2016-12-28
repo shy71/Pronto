@@ -74,6 +74,9 @@ namespace ProntoV2
 			// aapt resource value: 0x7f020008
 			public const int ShopNow = 2130837512;
 			
+			// aapt resource value: 0x7f020009
+			public const int ShoppingIcon = 2130837513;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
