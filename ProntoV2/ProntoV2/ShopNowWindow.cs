@@ -9,6 +9,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using ZXing.Mobile;
+using ZXing.QrCode;
 using Android.Preferences;
 //g
 namespace ProntoV2
@@ -30,12 +31,17 @@ namespace ProntoV2
             FindViewById(Resource.Id.addBtn).Click += OpenBarcode;
         }
         private async void OpenBarcode(object sender, EventArgs e)
-        {
-                var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-                var result = await scanner.Scan();
+        {   
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            scanner.TopText = "scan the product barcode";
+            var result = await scanner.Scan();
+            try {
                 if (result != null)
-                    AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
+                AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
+            }
+            catch { }
         }
+
         public void Refresh()
         {
             LinearLayout main = ((LinearLayout)FindViewById(Resource.Id.main));
@@ -56,12 +62,12 @@ namespace ProntoV2
             ((TextView)view.FindViewById(Resource.Id.foodName)).Text = (item.ManufacturerItemDescription.Length > 15) ? item.ManufacturerItemDescription.Substring(0, 15) : item.ManufacturerItemDescription;
             ((TextView)view.FindViewById(Resource.Id.foodCompany)).Text = (item.ManufacturerName.Length > 15) ? item.ManufacturerName.Substring(0, 15) : item.ManufacturerName;
             ((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text = item.ItemPrice.ToString() + '¤';
-            ((TextView)view.FindViewById(Resource.Id.foodQTY)).Text = amount.ToString();
+            ((TextView)view.FindViewById(Resource.Id.qty)).Text = amount.ToString();
             view.Click += (e, s) =>
             {
                 var activity2 = new Intent(this, typeof(ItemDetails));
                 activity2.PutExtra("ItemCode", item.ItemCode);
-                activity2.PutExtra("ItemQty", Convert.ToInt32(((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text));
+                activity2.PutExtra("ItemQty", ((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text);
                 StartActivity(activity2);
             };
             ((LinearLayout)FindViewById(Resource.Id.main)).AddView(view);

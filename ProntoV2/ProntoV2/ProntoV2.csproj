@@ -74,6 +74,8 @@
     <Compile Include="ItemsProdAndAmount.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageShoppinhItems.cs" />
+    <Compile Include="MySQLPullParser.cs" />
+    <Compile Include="PHPGetter.cs" />
     <Compile Include="PreviousItemPreview.cs" />
     <Compile Include="PreviousShoppings.cs" />
     <Compile Include="Purchase.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="XmlTools.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\ProntoDB.db" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
