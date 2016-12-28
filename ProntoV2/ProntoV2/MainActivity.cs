@@ -33,13 +33,20 @@ namespace ProntoV2
             //    }
             //}
 
-            FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
+            FindViewById(Resource.Id.shopNowButton).Click += (s,e)=>StartActivity(typeof(ShopNowWindow));
         }
         private async void OpenBarcode(object sender, EventArgs e)
         {
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            scanner.TopText = "scan the product barcode";
+            var result = await scanner.Scan();
+            try
+            {
+                if (result != null)
+                    result.GetHashCode();
 
-            StartActivity(typeof(ShopNowWindow));
-
+            }
+            catch { }
         }
 
         public void TraslateXML()

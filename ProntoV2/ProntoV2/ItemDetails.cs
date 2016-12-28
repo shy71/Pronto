@@ -31,7 +31,7 @@ namespace ProntoV2
                 Toast.MakeText(Application.Context, "Could not found barcode", ToastLength.Short);
                 Finish();
             }
-            ((TextView)FindViewById(Resource.Id.description)).Text = item.ItemName;
+            ((TextView)FindViewById(Resource.Id.description)).Text =item.ItemName;
             ((TextView)FindViewById(Resource.Id.foodCompany)).Text = item.ManufacturerName;
             ((TextView)FindViewById(Resource.Id.pricePerUnit)).Text = item.ItemPrice.ToString();
             ((TextView)FindViewById(Resource.Id.foodQTY)).Text = qty;
@@ -53,7 +53,7 @@ namespace ProntoV2
                 ((TextView)FindViewById(Resource.Id.totalPrice)).Text = (Convert.ToDouble(item.ItemPrice) * Convert.ToInt32(((TextView)FindViewById(Resource.Id.foodQTY)).Text)).ToString();
 
             };
-            ((TextView)FindViewById(Resource.Id.deleteButton)).Click += (s, e) =>
+            ((ImageButton)FindViewById(Resource.Id.deleteButton)).Click += (s, e) =>
             {
                 ManageShoppingItems.Items.RemoveAll(x=>x.Key.ItemCode.Equals(item.ItemCode));
                 ManageShoppingItems.Refresh();

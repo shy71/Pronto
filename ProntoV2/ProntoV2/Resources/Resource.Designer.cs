@@ -80,6 +80,12 @@ namespace ProntoV2
 			// aapt resource value: 0x7f02000a
 			public const int ShoppingIcon = 2130837514;
 			
+			// aapt resource value: 0x7f02000b
+			public const int ShoppingIconBlue = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int Trash = 2130837516;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
