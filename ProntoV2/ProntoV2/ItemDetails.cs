@@ -29,12 +29,27 @@ namespace ProntoV2
             ((TextView)FindViewById(Resource.Id.foodCompany)).Text = item.ManufacturerName;
             ((TextView)FindViewById(Resource.Id.pricePerUnit)).Text = item.ItemPrice.ToString();
             ((TextView)FindViewById(Resource.Id.qty)).Text = qty;
-            ((TextView)FindViewById(Resource.Id.plusButton)).Click += (s,e)=>(Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text)+1).ToString();
-            ((TextView)FindViewById(Resource.Id.plusButton)).Click += (s, e) => (Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text) -1).ToString();
-
-
-
+            ((TextView)FindViewById(Resource.Id.plusButton)).Click += (s, e) =>
+            {
+                ManageShoppingItems.plusAmunt(item);
+                ((TextView)FindViewById(Resource.Id.qty)).Text = (Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text) + 1).ToString();
+            };
+            ((TextView)FindViewById(Resource.Id.minusButton)).Click += (s, e) =>
+            {
+                ManageShoppingItems.minusAmunt(item);
+                ((TextView)FindViewById(Resource.Id.qty)).Text = (Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text) - 1).ToString();
+            };
+            ((TextView)FindViewById(Resource.Id.deleteButton)).Click += (s, e) =>
+            {
+                ManageShoppingItems.Items.Remove(new ItemsProdAndAmount(item, Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text)));
+                ManageShoppingItems.Refresh();
+                Finish();
+            };
             // Create your application here
+        }
+        protected override void OnStop()
+        {
+            ManageShoppingItems.Refresh();
         }
     }
 }

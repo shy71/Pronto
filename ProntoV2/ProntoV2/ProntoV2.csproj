@@ -73,6 +73,7 @@
     <Compile Include="ItemDetails.cs" />
     <Compile Include="ItemsProdAndAmount.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="ManageShoppinhItems.cs" />
     <Compile Include="MySQLPullParser.cs" />
     <Compile Include="PreviousItemPreview.cs" />
     <Compile Include="PreviousShoppings.cs" />
