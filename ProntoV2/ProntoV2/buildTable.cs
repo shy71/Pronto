@@ -19,7 +19,7 @@ namespace ProntoV2
         string folder;
         SQLiteConnection conn;
 
-        buildTable()
+        public buildTable()
         {
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));

@@ -7,9 +7,19 @@ using System.Xml.Serialization;
 
 namespace ProntoV2
 {
-    /*static class XmlTools
+    static class XmlTools
     {
-        public static void Addx<t>(this t a) where t : new()
+        public static List<Item> getAllItem(Stream f)
+        {
+            FileStream fss;
+            fss = f as FileStream;
+            XmlSerializer xmlss = new XmlSerializer(typeof(List<Item>));
+            List<Item> r = (List<Item>)xmlss.Deserialize(fss);
+            fss.Close();
+            return r;
+        }
+    }
+       /* public static void Addx<t>(this t a) where t : new()
         {
           //  var documents = ProntoV2.GetFolderPath(ProntoV2.SpecialFolder.MyDocuments); TODO
             // var filename = Path.Combine(documents, "purchaes.xml"); TODO
