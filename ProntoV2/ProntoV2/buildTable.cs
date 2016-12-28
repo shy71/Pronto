@@ -29,7 +29,7 @@ namespace ProntoV2
             //  conn.CreateTable<Products>();
         }
 
-        public static void Initialize(InputStream r)
+        public static void Initialize()
         {
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
