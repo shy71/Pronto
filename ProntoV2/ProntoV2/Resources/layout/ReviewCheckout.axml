@@ -12,7 +12,8 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:text="תעודת זהות"
+        android:hint="תעודת זהות"
+        android:textColorHint="@android:color/darker_gray"
         android:textSize="25dp" />
     <EditText
         android:id="@+id/creditCardNum"
@@ -21,7 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:text="מספר כרטיס אשראי"
+        android:textColorHint="@android:color/darker_gray"
+        android:hint="מספר כרטיס אשראי"
         android:textSize="25dp" />
     <LinearLayout
         android:layout_gravity="center_horizontal"
@@ -30,7 +32,8 @@
         <Spinner
             android:id="@+id/monthSpinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+             android:background="@android:color/darker_gray"/>
         <TextView
             android:textColor="@android:color/darker_gray"
             android:layout_width="wrap_content"
@@ -41,7 +44,8 @@
         <Spinner
             android:id="@+id/daySpinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+            android:background="@android:color/darker_gray"/>
         <TextView
             android:textColor="@android:color/darker_gray"
             android:layout_width="wrap_content"
@@ -54,8 +58,9 @@
             android:layout_width="130dp"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:layout_height="wrap_content"
-            android:text="קוד סודי" />
+            android:layout_height="wrap_content"  
+            android:textColorHint="@android:color/darker_gray"
+            android:hint="קוד סודי" />
     </LinearLayout>
     <Button
         android:textColor="@android:color/darker_gray"
