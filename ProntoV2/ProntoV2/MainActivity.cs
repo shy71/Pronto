@@ -12,14 +12,15 @@ namespace ProntoV2
             TraslateXML();
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
-            TraslateXML();
+            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
+           
             StartActivity(typeof(PreviousShoppings));
         }
         public void TraslateXML()
         {
             Stream input = Assets.Open("prices.xml");
-            XmlTools.getAllItem(input);
-            new LoadPrices().GetPricesList(input);
+
+            //new LoadPrices().GetPricesList(input);
              
         }
     }
