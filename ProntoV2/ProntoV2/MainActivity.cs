@@ -17,6 +17,7 @@ namespace ProntoV2
             ActionBar.Hide();
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
+            PHPGetter.PHPGet();
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
