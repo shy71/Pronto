@@ -12,6 +12,7 @@ namespace ProntoV2
             TraslateXML();
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
+            TraslateXML();
             StartActivity(typeof(PreviousShoppings));
         }
         public void TraslateXML()
