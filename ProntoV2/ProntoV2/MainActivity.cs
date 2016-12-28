@@ -9,13 +9,14 @@ namespace ProntoV2
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            TraslateXML();
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
             StartActivity(typeof(PreviousShoppings));
         }
         public void TraslateXML()
         {
-            Stream input = Assets.Open("my_asset.txt");
+            Stream input = Assets.Open("prices.xml");
 
             new LoadPrices().GetPricesList(input);
              
