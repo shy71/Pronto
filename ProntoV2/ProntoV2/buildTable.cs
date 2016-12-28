@@ -11,10 +11,11 @@ using Android.Views;
 using Android.Widget;
 using System.IO;
 using SQLite;
+using Java.IO;
 
 namespace ProntoV2
 {
-    class buildTable
+    public class buildTable
     {
         static string folder;
         static SQLiteConnection conn;
@@ -36,6 +37,11 @@ namespace ProntoV2
             Create();
             //conn.CreateTable<Product>();
             //  conn.CreateTable<Products>(); }
+        }
+
+        public static string getDBPath()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "myAmmazingApp.db");
         }
 
         public static void Close() { conn.Close();folder = string.Empty; }
