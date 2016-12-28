@@ -118,17 +118,17 @@ namespace ProntoV2
 			// aapt resource value: 0x7f06000a
 			public const int X = 2131099658;
 			
-			// aapt resource value: 0x7f06001f
-			public const int addBtn = 2131099679;
+			// aapt resource value: 0x7f060023
+			public const int addBtn = 2131099683;
 			
 			// aapt resource value: 0x7f060015
 			public const int brand = 2131099669;
 			
-			// aapt resource value: 0x7f06001e
-			public const int checkoutBtn = 2131099678;
+			// aapt resource value: 0x7f060022
+			public const int checkoutBtn = 2131099682;
 			
-			// aapt resource value: 0x7f060020
-			public const int contentFrame = 2131099680;
+			// aapt resource value: 0x7f060024
+			public const int contentFrame = 2131099684;
 			
 			// aapt resource value: 0x7f06001a
 			public const int creditCardNum = 2131099674;
@@ -136,8 +136,8 @@ namespace ProntoV2
 			// aapt resource value: 0x7f060014
 			public const int date = 2131099668;
 			
-			// aapt resource value: 0x7f06001c
-			public const int daySpinner = 2131099676;
+			// aapt resource value: 0x7f06001e
+			public const int daySpinner = 2131099678;
 			
 			// aapt resource value: 0x7f060000
 			public const int deleteButton = 2131099648;
@@ -172,14 +172,17 @@ namespace ProntoV2
 			// aapt resource value: 0x7f06000f
 			public const int imageView1 = 2131099663;
 			
+			// aapt resource value: 0x7f06001b
+			public const int linearLayout1 = 2131099675;
+			
 			// aapt resource value: 0x7f060012
 			public const int main = 2131099666;
 			
 			// aapt resource value: 0x7f060006
 			public const int minusButton = 2131099654;
 			
-			// aapt resource value: 0x7f06001b
-			public const int monthSpinner = 2131099675;
+			// aapt resource value: 0x7f06001c
+			public const int monthSpinner = 2131099676;
 			
 			// aapt resource value: 0x7f060009
 			public const int numberPicker1 = 2131099657;
@@ -199,8 +202,8 @@ namespace ProntoV2
 			// aapt resource value: 0x7f06000b
 			public const int qty = 2131099659;
 			
-			// aapt resource value: 0x7f06001d
-			public const int securityText = 2131099677;
+			// aapt resource value: 0x7f060021
+			public const int securityText = 2131099681;
 			
 			// aapt resource value: 0x7f060013
 			public const int shopDetail = 2131099667;
@@ -208,8 +211,17 @@ namespace ProntoV2
 			// aapt resource value: 0x7f060011
 			public const int shopNowButton = 2131099665;
 			
+			// aapt resource value: 0x7f060020
+			public const int space1 = 2131099680;
+			
 			// aapt resource value: 0x7f060016
 			public const int store = 2131099670;
+			
+			// aapt resource value: 0x7f06001d
+			public const int textView1 = 2131099677;
+			
+			// aapt resource value: 0x7f06001f
+			public const int textView2 = 2131099679;
 			
 			// aapt resource value: 0x7f060005
 			public const int totalPrice = 2131099653;
