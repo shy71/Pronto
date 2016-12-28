@@ -4,6 +4,7 @@ using Android.Util;
 using System;
 using System.IO;
 using System.Linq;
+using ZXing.Mobile;
 
 
 namespace ProntoV2
@@ -15,6 +16,7 @@ namespace ProntoV2
         {
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
+            PHPGetter.PHPGet();
             SetContentView (Resource.Layout.Main);
             FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
             buildTable.Initialize();
@@ -34,26 +36,11 @@ namespace ProntoV2
         }
         private async void OpenBarcode(object sender, EventArgs e)
         {
-            StartActivity(typeof(ShopNowWindow));
-            //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            //scanner.TopText = "Scan Store QR";
-            //var result = await scanner.Scan();
-            //if (result != null)
-            //{
-            //    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
-            //    dlgAlert.SetMessage("This is an alert with no consequence");
-            //    dlgAlert.SetTitle("App Title");
-            //    dlgAlert.SetPositiveButton("Retry", (s, ee) => OpenBarcode(sender, e));
-            //    dlgAlert.SetCancelable(true);
-            //    dlgAlert.Create().Show();
-            //    //readDataBase
-            //    StartActivity(typeof(ShopNowWindow));
-            //}
-            //else
-            //    return;
 
+            StartActivity(typeof(ShopNowWindow));
 
         }
+
         public void TraslateXML()
         {
             /*
