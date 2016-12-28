@@ -75,6 +75,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageShoppinhItems.cs" />
     <Compile Include="MySQLPullParser.cs" />
+    <Compile Include="PHPGetter.cs" />
     <Compile Include="PreviousItemPreview.cs" />
     <Compile Include="PreviousShoppings.cs" />
     <Compile Include="Purchase.cs" />
