@@ -17,10 +17,21 @@ namespace ProntoV2
         }
         public void TraslateXML()
         {
+            /*
             Stream input = Assets.Open("prices.xml");
 
-            //new LoadPrices().GetPricesList(input);
-             
+            new LoadPrices().GetPricesList(input);
+            */
+            Purchase p = new Purchase();
+            Item t = new Item();
+            t.ItemName = "king";
+            t.ItemPrice = 2;
+            ItemsProdAndAmount i = new ItemsProdAndAmount(t, 5);
+            p.AddItem(i);
+
+            PurchesManager pm = new PurchesManager();
+            pm.Save(p, "buyNumberOne");
+            
         }
     }
 }

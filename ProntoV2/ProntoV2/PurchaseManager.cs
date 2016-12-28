@@ -19,7 +19,7 @@ namespace ProntoV2
     class PurchesManager
     {
 
-        private List<Purchase> Load(string file)
+        public List<Purchase> Load(string file)
         {
             List<Purchase> listofa = new List<Purchase>();
             XmlSerializer formatter = new XmlSerializer(typeof(Purchase));
@@ -30,7 +30,7 @@ namespace ProntoV2
             return (List<Purchase>)formatter.Deserialize(stream);
         }
 
-        private void Save(List<ItemsProdAndAmount> listofa, string path)
+        public void Save(Purchase listofa, string path)
         {
             FileStream outFile = File.Create(path);
             XmlSerializer formatter = new XmlSerializer(typeof(Purchase));
