@@ -51,8 +51,13 @@ namespace ProntoV2
         }
         public void AddItem(Item item)
         {
-            ManageShoppingItems.Items.Add(new ItemsProdAndAmount(item, 1));
-            AddItemToList(item);
+            if (!ManageShoppingItems.Items.Any(x => x.Key.ItemCode == item.ItemCode))
+            {
+                ManageShoppingItems.Items.Add(new ItemsProdAndAmount(item, 1));
+                AddItemToList(item);
+            }
+            else
+                Toast.MakeText(Application.Context, "The product is already in your list!", ToastLength.Short);
         }
         private void AddItemToList(Item item,int amount=1)
         {

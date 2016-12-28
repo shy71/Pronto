@@ -25,7 +25,7 @@ namespace ProntoV2
         {
             StartActivity(typeof(ShopNowWindow));
             //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            //scanner.TopText = "scan market qr";
+            //scanner.TopText = "Scan Store QR";
             //var result = await scanner.Scan();
             //if (result != null)
             //{
