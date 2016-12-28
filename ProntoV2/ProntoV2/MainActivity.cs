@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Util;
 using System;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,15 @@ namespace ProntoV2
             buildTable.Initialize();
             buildTable.Create();
             TraslateXML();
+            Log.Info("ProntoDB", "The file is in the path: " + buildTable.getDBPath());
+            if(!File.Exists(buildTable.getDBPath()))
+            {
+                StreamReader input = new StreamReader(Assets.Open("ProntoDB.db"));
+                using (StreamWriter outputFile = new StreamWriter(buildTable.getDBPath()))
+                {
+                    input.BaseStream.CopyToAsync(outputFile.BaseStream);
+                }
+            }
 
             FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
         }
@@ -26,7 +36,7 @@ namespace ProntoV2
         {
             StartActivity(typeof(ShopNowWindow));
             //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            //scanner.TopText = "scan market qr";
+            //scanner.TopText = "Scan Store QR";
             //var result = await scanner.Scan();
             //if (result != null)
             //{
