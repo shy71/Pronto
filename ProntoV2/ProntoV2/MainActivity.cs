@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ProntoV2
 {
-    [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon",ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

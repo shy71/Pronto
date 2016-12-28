@@ -32,7 +32,7 @@ namespace ProntoV2
         public static void Initialize()
         {
             folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            conn = new SQLiteConnection(System.IO.Path.Combine(folder, "myAmmazingApp.db"));
+            conn = new SQLiteConnection(Path.Combine(folder, "myAmmazingApp.db"));
             conn.CreateTable<Item>();
             Create();
             //conn.CreateTable<Product>();
@@ -59,7 +59,6 @@ namespace ProntoV2
         public static void AddItem(Item itm)
         {
             conn.Insert(itm);
-            Console.WriteLine(itm.ToString());
         }
 
         public static void buildItUp(Stream strm)
