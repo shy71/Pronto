@@ -118,17 +118,17 @@ namespace ProntoV2
 			// aapt resource value: 0x7f06000a
 			public const int X = 2131099658;
 			
-			// aapt resource value: 0x7f060023
-			public const int addBtn = 2131099683;
+			// aapt resource value: 0x7f060024
+			public const int addBtn = 2131099684;
 			
 			// aapt resource value: 0x7f060015
 			public const int brand = 2131099669;
 			
-			// aapt resource value: 0x7f060022
-			public const int checkoutBtn = 2131099682;
+			// aapt resource value: 0x7f060023
+			public const int checkoutBtn = 2131099683;
 			
-			// aapt resource value: 0x7f060024
-			public const int contentFrame = 2131099684;
+			// aapt resource value: 0x7f060025
+			public const int contentFrame = 2131099685;
 			
 			// aapt resource value: 0x7f06001a
 			public const int creditCardNum = 2131099674;
@@ -205,6 +205,9 @@ namespace ProntoV2
 			// aapt resource value: 0x7f060021
 			public const int securityText = 2131099681;
 			
+			// aapt resource value: 0x7f060022
+			public const int sendBtn = 2131099682;
+			
 			// aapt resource value: 0x7f060013
 			public const int shopDetail = 2131099667;
 			
@@ -264,19 +267,22 @@ namespace ProntoV2
 			public const int PreviousShoppings = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int ReviewCheckout = 2130903048;
+			public const int Recipe = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int ShopNowWindow = 2130903049;
+			public const int ReviewCheckout = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Temp = 2130903050;
+			public const int ShopNowWindow = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int zxingscanneractivitylayout = 2130903051;
+			public const int Temp = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int zxingscannerfragmentlayout = 2130903052;
+			public const int zxingscanneractivitylayout = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int zxingscannerfragmentlayout = 2130903053;
 			
 			static Layout()
 			{
