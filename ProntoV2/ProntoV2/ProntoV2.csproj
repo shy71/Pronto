@@ -46,6 +46,9 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="Syncfusion.SfNumericUpDown.Android">
+      <HintPath>C:\Users\Sara\AppData\Local\Syncfusion\EssentialStudio\14.4.0.15\Xamarin\lib\android\Syncfusion.SfNumericUpDown.Android.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

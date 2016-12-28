@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Com.Syncfusion.Numericupdown;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -18,6 +18,7 @@ namespace ProntoV2
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            
             SetContentView(Resource.Layout.ItemDetails);
             string barcode = Intent.GetStringExtra("ItemCode") ?? "Data not available";
             string qty = Intent.GetStringExtra("ItemQty") ?? "Data not available";
