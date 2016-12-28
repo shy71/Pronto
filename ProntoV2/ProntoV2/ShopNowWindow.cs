@@ -36,9 +36,10 @@ namespace ProntoV2
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             scanner.TopText = "scan the product barcode";
             var result = await scanner.Scan();
-            try {
+            try
+            {
                 if (result != null)
-                AddItem(buildTable.GetProduction(result.Text).FirstOrDefault());
+                    AddItem(buildTable.GetProduction(result.Text).FirstOrDefault());
             }
             catch { }
         }
@@ -47,8 +48,15 @@ namespace ProntoV2
         {
             LinearLayout main = ((LinearLayout)FindViewById(Resource.Id.main));
             main.RemoveAllViews();
+            if (!ManageShoppingItems.Items.Any())
+            {
+                var view = new TextView(Application.Context);
+                view.Text = "הרשימה ריקה!" + "\n" + "עוד לא סרקת אף מוצר";
+                ((LinearLayout)FindViewById(Resource.Id.main)).AddView(view);
+            }
+
             foreach (var item in ManageShoppingItems.Items)
-                AddItemToList(item.Key,item.Amount);
+                AddItemToList(item.Key, item.Amount);
         }
         public void AddItem(Item item)
         {
