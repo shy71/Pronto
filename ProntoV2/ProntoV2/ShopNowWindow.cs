@@ -39,7 +39,8 @@ namespace ProntoV2
         {
                 var scanner = new ZXing.Mobile.MobileBarcodeScanner();
                 var result = await scanner.Scan();
-
+                ((TextView)FindViewById(Resource.Id.checkoutBtn)).Text = result.Text;
+                return;
                 if (result != null)
                     AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
         }
