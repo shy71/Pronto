@@ -22,6 +22,7 @@ namespace ProntoV2
             SetContentView(Resource.Layout.ReviewCheckout);
             ((Spinner)FindViewById(Resource.Id.daySpinner)).Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, Enumerable.Range(1, 31).Select(x=>x.ToString()).ToList());
             ((Spinner)FindViewById(Resource.Id.monthSpinner)).Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, Enumerable.Range(1, 12).Select(x => x.ToString()).ToList());
+            (FindViewById(Resource.Id.sendBtn)).Click += (s, e) => StartActivity(typeof(Recipe));
         }
     }
 }
