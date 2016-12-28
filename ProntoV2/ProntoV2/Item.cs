@@ -14,6 +14,29 @@ namespace ProntoV2
 {
     public class Item
     {
+
+
+        public Item() { }
+        public Item(string ic, bool it, string name,string mn,string mCountry, string Description,string unitQty, float qty,bool bIsWhighted, bool quantitInPackage,string unitOfMeasure, int price,float unitofmeasureprice, bool allowD, bool status)
+        {
+            ItemCode = ic;
+            ItemType = it;
+            ItemName = name;
+            ManufacturerName = mn;
+            ManufactureCountry = mCountry;
+            ManufacturerItemDescription = Description;
+            UnitQty = unitQty;
+            Quantity = qty;
+            bIsWeighted = bIsWhighted;
+            UnitOfMeasure = unitOfMeasure;
+            QtyInPackage = quantitInPackage;
+            ItemPrice = price;
+            UnitOfMeasurePrice = unitofmeasureprice;
+            AllowDiscount = allowD;
+            ItemStatus = status;
+        }
+
+
         public DateTime PriceUpdateDate { get; set; }
         public string ItemCode { get; set; }
         public bool ItemType { get; set; }
