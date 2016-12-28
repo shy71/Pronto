@@ -19,7 +19,6 @@ namespace ProntoV2
 
         public List<ItemsProdAndAmount> GetItems()
         {
-            F
             return items;
         }
 

@@ -73,8 +73,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="PreviousItemPreview.cs" />
     <Compile Include="PreviousShoppings.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="Products.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="PurchaseManager.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
