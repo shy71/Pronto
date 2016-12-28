@@ -6,7 +6,6 @@ namespace ProntoV2
 {
     public static class PHPGetter
     {
-        public static void PHPGet();
         //File dir = new File(context.getFilesDir(),"ProntoDB.db");
         //if (dir.exists() == false)
 
