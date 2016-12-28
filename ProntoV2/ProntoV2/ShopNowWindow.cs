@@ -37,7 +37,7 @@ namespace ProntoV2
             var result = await scanner.Scan();
             try {
                 if (result != null)
-                AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
+                AddItem(buildTable.GetProduction(result.Text).FirstOrDefault());
             }
             catch { }
         }
@@ -52,6 +52,7 @@ namespace ProntoV2
         public void AddItem(Item item)
         {
             ManageShoppingItems.Items.Add(new ItemsProdAndAmount(item, 1));
+            AddItemToList(item);
         }
         private void AddItemToList(Item item,int amount=1)
         {
