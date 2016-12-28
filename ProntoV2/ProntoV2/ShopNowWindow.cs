@@ -9,6 +9,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using ZXing.Mobile;
+using ZXing.QrCode;
 using Android.Preferences;
 //g
 namespace ProntoV2
@@ -30,12 +31,17 @@ namespace ProntoV2
             FindViewById(Resource.Id.addBtn).Click += OpenBarcode;
         }
         private async void OpenBarcode(object sender, EventArgs e)
-        {
-                var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-                var result = await scanner.Scan();
+        {   
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            scanner.TopText = "scan the product barcode";
+            var result = await scanner.Scan();
+            try {
                 if (result != null)
-                    AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
+                AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
+            }
+            catch { }
         }
+
         public void Refresh()
         {
             LinearLayout main = ((LinearLayout)FindViewById(Resource.Id.main));
