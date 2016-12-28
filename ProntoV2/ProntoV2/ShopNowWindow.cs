@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ZXing.Mobile;
 //g
 namespace ProntoV2
 {
@@ -30,10 +31,22 @@ namespace ProntoV2
             //main.AddView(item1);
             //main.AddView(item2);
             // listView.AddView(item);
-            
+            MobileBarcodeScanner.Initialize(Application);
+
+            FindViewById(Resource.Id.addBtn).Click += OpenBarcode;
+        }
+        private async void OpenBarcode(object sender, EventArgs e)
+        {
+                var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+                var result = await scanner.Scan();
+
+                if (result != null)
+                    AddItemToList(new buildTable().GetProduction(result.Text).FirstOrDefault());
         }
         public void AddItemToList(Item item)
         {
+            if (item == null)
+                return;
             LinearLayout view = (LinearLayout)((LayoutInflater)this.GetSystemService(Context.LayoutInflaterService)).Inflate(Resource.Layout.ListItem, null);
             //view.FindViewById(Resource.Id.foodIcon)
             ((TextView)view.FindViewById(Resource.Id.foodName)).Text = (item.ManufacturerItemDescription.Length > 15) ? item.ManufacturerItemDescription.Substring(0, 15) : item.ManufacturerItemDescription;
