@@ -23,6 +23,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
             <ImageButton
+              android:id="@+id/historyBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="150dp"
@@ -30,7 +31,8 @@
                 android:src="@drawable/History"
                 android:background="@android:color/transparent"
                 android:layout_weight="0.20" />
-            <ImageButton
+          <ImageButton
+            android:id="@+id/shopNowButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="150dp"
@@ -38,7 +40,7 @@
                 android:src="@drawable/ShopNow"
                 android:layout_weight="0.20"
                 android:background="@android:color/transparent"
-                android:id="@+id/shopNowButton" />
+                />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

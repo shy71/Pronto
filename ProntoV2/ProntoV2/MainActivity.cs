@@ -12,9 +12,11 @@ namespace ProntoV2
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            TraslateXML();
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
+            FindViewById(Resource.Id.historyBtn).Click +=(s,e)=> StartActivity(typeof(PreviousShoppings));
+            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
+
             TraslateXML();
            
         }
