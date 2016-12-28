@@ -48,10 +48,10 @@ namespace ProntoV2
          
         public static void Create()
         {
-            Item itm1 = new Item("7290000066318", true, "במבה 80 גרם", "אסם", "IL", "במבה", "גרמים", 80.00, false, false, "100 גרם", 4.50, 5.63, true, true);
+            Item itm1 = new Item("7290000066318", true, "במבה שמונים גרם", "אסם", "IL", "במבה", "גרמים", 80.00, false, false, "100 גרם", 4.50, 5.63, true, true);
             Item itm2 = new Item("013495113537", true, "קליק חום לבן מעורב 75 גר", "יוניליוור", "IL", "קליק מעורב", "גרמים", 75.00, false, false, "100 גרם", 5.90, 7.87 , true, true);
-            Item itm3 = new Item("7290011051396", true, "שוופס אפרסק מוגז 1.5ליטר", "יפאורה שותפות מובגלת לשיווק", "IL", "שוופס אפרסק", "ליטרים",1.50, false, false, "ליטר", 6.50, 4.33, true, true);
-             Item itm4 = new Item("7290000043012", true, "שוקו שוק עמיד 200 מל", "תנובה", "IL", "שוקו עמיד", "מיליליטרים", 250, false, false, "מל 100", 4.3, 1.72, true, true);
+            Item itm3 = new Item("7290011051396", true, "שוופס אפרסק מוגז אחד ליטר", "יפאורה שותפות מובגלת לשיווק", "IL", "שוופס אפרסק", "ליטרים",1.50, false, false, "ליטר", 6.50, 4.33, true, true);
+             Item itm4 = new Item("7290000043012", true, "שוקו שוק עמיד מאתיים מל", "תנובה", "IL", "שוקו עמיד", "מיליליטרים", 250, false, false, "מל 100", 4.3, 1.72, true, true);
 
             buildTable.AddItem(itm1);
             buildTable.AddItem(itm2);

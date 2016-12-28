@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Util;
 using System;
@@ -33,13 +34,27 @@ namespace ProntoV2
             //    }
             //}
 
-            FindViewById(Resource.Id.shopNowButton).Click += OpenBarcode;
+            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => OpenBarcode(null, null);//StartActivity(typeof(ShopNowWindow));
         }
         private async void OpenBarcode(object sender, EventArgs e)
         {
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
 
-            StartActivity(typeof(ShopNowWindow));
+            scanner.TopText = "Scan the store QR Code";
+            var result = await scanner.Scan(Application.Context, MobileBarcodeScanningOptions.Default);
+            try
+            {
+                if (result != null)
+                {
+                    var array = result.Text.Split(';');
+                    var activity2 = new Intent(this, typeof(ShopNowWindow));
+                    //get file with url in array[0]
+                    activity2.PutExtra("StoreMsg", array[1]);
+                    StartActivity(activity2);
+                }
 
+            }
+            catch { }
         }
 
         public void TraslateXML()
