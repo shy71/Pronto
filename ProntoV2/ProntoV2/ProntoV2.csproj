@@ -83,6 +83,7 @@
     <Compile Include="ShopNowWindow.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="View1.cs" />
     <Compile Include="XmlTools.cs" />
   </ItemGroup>
