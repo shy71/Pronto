@@ -18,7 +18,7 @@ namespace ProntoV2
         public void TraslateXML()
         {
             Stream input = Assets.Open("prices.xml");
-
+            XmlTools.getAllItem(input);
             new LoadPrices().GetPricesList(input);
              
         }
