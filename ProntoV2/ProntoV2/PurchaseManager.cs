@@ -19,15 +19,17 @@ namespace ProntoV2
     class PurchesManager
     {
 
-        public List<Purchase> Load(string file)
+        public Purchase Load(string file)
         {
-            List<Purchase> listofa = new List<Purchase>();
-            XmlSerializer formatter = new XmlSerializer(typeof(Purchase));
-            FileStream aFile = new FileStream(file, FileMode.Open);
-            byte[] buffer = new byte[aFile.Length];
-            aFile.Read(buffer, 0, (int)aFile.Length);
-            MemoryStream stream = new MemoryStream(buffer);
-            return (List<Purchase>)formatter.Deserialize(stream);
+            var input =new StreamReader(Application.Context.OpenFileInput(file));
+            string str = input.ReadToEnd();
+            var array=str.Split(',');
+            Purchase pur = new Purchase();
+            int i = 0;
+            for ( i = 0; i < array.Length-1; i += 2)
+                pur.AddItem(new ItemsProdAndAmount(new buildTable().GetProduction(array[i]).First(), Convert.ToInt32(array[i + 1])));
+            pur.ShopID =Convert.ToInt32( array.Last());
+            return pur;
         }
 
         public void Save(Purchase listofa)
@@ -39,15 +41,16 @@ namespace ProntoV2
             {
                 finalPath = path + i++;
             }
-            path =/* Application.Context.FilesDir + "/"+*/ finalPath.Replace("/","-");
+            path = finalPath.Replace("/","-");
 
-            var outputStream =Application.Context.OpenFileOutput(path, FileCreationMode.Private);
+            var outputStream =new StreamWriter( Application.Context.OpenFileOutput(path, FileCreationMode.Private));
             String str = "";
             foreach (var item in listofa.GetItems())
             {
-                str+=item.Key.ItemCode+","+item.Amount;
+                str += item.Key.ItemCode + "," + item.Amount;
             }
-            outputStream.Write(Encoding.ASCII.GetBytes(str), 0, str.Length);
+            str += listofa.ShopID;
+            outputStream.Write(str);
             outputStream.Close();
         }
     }

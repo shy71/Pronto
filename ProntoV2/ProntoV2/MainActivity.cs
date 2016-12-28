@@ -1,6 +1,9 @@
 ﻿using Android.App;
 using Android.OS;
 using System.IO;
+using System.Linq;
+
+
 namespace ProntoV2
 {
     [Activity(Label = "ProntoV2", MainLauncher = true, Icon = "@drawable/icon")]
@@ -13,7 +16,6 @@ namespace ProntoV2
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
             TraslateXML();
-            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
            
         }
         public void TraslateXML()
@@ -33,6 +35,15 @@ namespace ProntoV2
             PurchesManager pm = new PurchesManager();
             pm.Save(p);
             
+            
+        }
+
+        public void TestSQL()
+        {
+            Test myTest = new Test();
+            myTest.Create();
+
+            Item itm = myTest.GetProduction("7296014048203").First();
             
         }
     }

@@ -73,6 +73,7 @@
     <Compile Include="ItemDetails.cs" />
     <Compile Include="ItemsProdAndAmount.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="ManageShoppinhItems.cs" />
     <Compile Include="PreviousItemPreview.cs" />
     <Compile Include="PreviousShoppings.cs" />
     <Compile Include="Purchase.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="ShopNowWindow.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="View1.cs" />
     <Compile Include="XmlTools.cs" />
   </ItemGroup>
