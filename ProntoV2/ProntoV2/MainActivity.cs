@@ -12,12 +12,12 @@ namespace ProntoV2
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            TraslateXML();
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
             TraslateXML();
             FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
            
-            StartActivity(typeof(PreviousShoppings));
         }
         public void TraslateXML()
         {
@@ -36,7 +36,7 @@ namespace ProntoV2
             PurchesManager pm = new PurchesManager();
             pm.Save(p);
             
-
+            
         }
 
         public void TestSQL()
