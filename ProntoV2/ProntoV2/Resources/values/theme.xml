@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="Theme.Custom" parent="@android:style/Theme.Black.NoTitleBar">
+  <!--<style name="Theme.Custom" parent="@android:style/Theme.Black.NoActionBar">
     <item name="android:colorButtonNormal">@android:color/transparent</item>
-  </style>
+  </style>-->
 </resources>
