@@ -74,7 +74,7 @@ namespace ProntoV2
             {
                 var activity2 = new Intent(this, typeof(ItemDetails));
                 activity2.PutExtra("ItemCode", item.ItemCode);
-                activity2.PutExtra("ItemQty", ((TextView)view.FindViewById(Resource.Id.pricePerUnit)).Text);
+                activity2.PutExtra("ItemQty", ((TextView)view.FindViewById(Resource.Id.qty)).Text);
                 StartActivity(activity2);
             };
             ((LinearLayout)FindViewById(Resource.Id.main)).AddView(view);

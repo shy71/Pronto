@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Com.Syncfusion.Numericupdown;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Text.Method;
 
 namespace ProntoV2
 {
@@ -23,7 +23,8 @@ namespace ProntoV2
             SetContentView(Resource.Layout.ItemDetails);
             string barcode = Intent.GetStringExtra("ItemCode") ?? "Data not available";
             string qty = Intent.GetStringExtra("ItemQty") ?? "Data not available";
-            
+            //((TextView)FindViewById(Resource.Id.description)).MovementMethod=new ScrollingMovementMethod();
+
             Item item=buildTable.GetProduction(barcode).FirstOrDefault();
             if (item == null)
             {
@@ -34,28 +35,27 @@ namespace ProntoV2
             ((TextView)FindViewById(Resource.Id.foodCompany)).Text = item.ManufacturerName;
             ((TextView)FindViewById(Resource.Id.pricePerUnit)).Text = item.ItemPrice.ToString();
             ((TextView)FindViewById(Resource.Id.foodQTY)).Text = qty;
+            ((TextView)FindViewById(Resource.Id.totalPrice)).Text = (Convert.ToDouble(item.ItemPrice) * Convert.ToInt32(((TextView)FindViewById(Resource.Id.foodQTY)).Text)).ToString();
             ((TextView)FindViewById(Resource.Id.plusButton)).Click += (s, e) =>
             {
                 ManageShoppingItems.plusAmunt(item);
-                ((TextView)FindViewById(Resource.Id.qty)).Text = (Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text) + 1).ToString();
-                ((TextView)FindViewById(Resource.Id.pricePerUnit)).Text = (Convert.ToInt32( item.ItemPrice) * Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text)).ToString();
+                ((TextView)FindViewById(Resource.Id.foodQTY)).Text = (Convert.ToInt32(((TextView)FindViewById(Resource.Id.foodQTY)).Text) + 1).ToString();
+                ((TextView)FindViewById(Resource.Id.totalPrice)).Text = (Convert.ToDouble(item.ItemPrice) * Convert.ToInt32(((TextView)FindViewById(Resource.Id.foodQTY)).Text)).ToString();
             };
             ((TextView)FindViewById(Resource.Id.minusButton)).Click += (s, e) =>
             {
-                if (((TextView)FindViewById(Resource.Id.qty)).Text.Equals("1"))
+                if (((TextView)FindViewById(Resource.Id.foodQTY)).Text.Equals("1"))
                 {
-                    ManageShoppingItems.Items.Remove(new ItemsProdAndAmount(item, Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text)));
-                    ManageShoppingItems.Refresh();
-                    Finish();
+                    Toast.MakeText(Application.Context, "אי אפשר להזמין 0 מוצרים!",ToastLength.Short);
                 }
                 ManageShoppingItems.minusAmunt(item);
-                ((TextView)FindViewById(Resource.Id.qty)).Text = (Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text) - 1).ToString();
-                ((TextView)FindViewById(Resource.Id.pricePerUnit)).Text = (Convert.ToInt32(item.ItemPrice) * Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text)).ToString();
+                ((TextView)FindViewById(Resource.Id.foodQTY)).Text = (Convert.ToInt32(((TextView)FindViewById(Resource.Id.foodQTY)).Text) - 1).ToString();
+                ((TextView)FindViewById(Resource.Id.totalPrice)).Text = (Convert.ToDouble(item.ItemPrice) * Convert.ToInt32(((TextView)FindViewById(Resource.Id.foodQTY)).Text)).ToString();
 
             };
             ((TextView)FindViewById(Resource.Id.deleteButton)).Click += (s, e) =>
             {
-                ManageShoppingItems.Items.Remove(new ItemsProdAndAmount(item, Convert.ToInt32(((TextView)FindViewById(Resource.Id.qty)).Text)));
+                ManageShoppingItems.Items.RemoveAll(x=>x.Key.ItemCode.Equals(item.ItemCode));
                 ManageShoppingItems.Refresh();
                 Finish();
             };
