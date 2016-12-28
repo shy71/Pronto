@@ -16,7 +16,6 @@ namespace ProntoV2
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
             TraslateXML();
-            FindViewById(Resource.Id.shopNowButton).Click += (s, e) => StartActivity(typeof(ShopNowWindow));
            
         }
         public void TraslateXML()
