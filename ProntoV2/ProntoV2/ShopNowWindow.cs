@@ -27,7 +27,8 @@ namespace ProntoV2
             ManageShoppingItems.SetActivtiy(this);
             Refresh();
             //FindViewById(Resource.Id.addBtn).Click += null;
-            Toast.MakeText(Application.Context, Intent.GetStringExtra("StoreMsg") ?? "Data not available", ToastLength.Short);
+            string str = Intent.GetStringExtra("StoreMsg") ?? "Data not available";
+            Toast.MakeText(Application.Context, str, ToastLength.Long).Show();
             FindViewById(Resource.Id.checkoutBtn).Click += (s, e) => StartActivity(typeof(ReviewCheckout));
             MobileBarcodeScanner.Initialize(Application);
             FindViewById(Resource.Id.addBtn).Click += OpenBarcode;
@@ -35,7 +36,7 @@ namespace ProntoV2
         private async void OpenBarcode(object sender, EventArgs e)
         {   
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-            scanner.TopText = "scan the product barcode";
+            scanner.TopText = "Scan The Product Barcode";
             var result = await scanner.Scan();
             try
             {
@@ -52,8 +53,12 @@ namespace ProntoV2
             main.RemoveAllViews();
             if (!ManageShoppingItems.Items.Any())
             {
+
                 var view = new TextView(Application.Context);
+                view.Gravity = GravityFlags.Center;
+
                 view.Text = "הרשימה ריקה!" + "\n" + "עוד לא סרקת אף מוצר";
+                view.TextSize = 25;
                 view.SetTextColor(Android.Graphics.Color.DarkGray);
                 ((LinearLayout)FindViewById(Resource.Id.main)).AddView(view);
             }
@@ -69,7 +74,7 @@ namespace ProntoV2
                 AddItemToList(item);
             }
             else
-                Toast.MakeText(Application.Context, "The product is already in your list!", ToastLength.Short);
+                Toast.MakeText(Application.Context, "The product is already in your list!", ToastLength.Short).Show();
 
         }
         private void AddItemToList(Item item,int amount=1)
