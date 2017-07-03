@@ -1,15 +1,15 @@
-# Pronto
+# Pronto<br>
 
-Shop Fast - Pay Fast
+<b>Shop Fast - Pay Fast</b><br>
 
-Won 1 place at the Hackton "Great Minds"
+Created in the Hackton "Great Minds" at JCT - 2016<br>
 
-Created in the Hackton "Great Minds" at JCT - 2016
+Created by:<br>
+Shy Tennenbaum - shytennenbaum@gmail.com<br>
+Yarden Leitner - yardenleitner@gmail.com<br>
+Ishai Haviv - ishrox123@gmail.com<br>
+Seffi Eliash  - sefeli123@gmail.com<br>
+Nerya Granot - neryagr@gmail.com<br>
+Matanya Furst - matanyaf123@gmail.com<br>
 
-Created by:
-Shy Tennenbaum - shytennenbaum@gmail.com
-Yarden Leitner - yardenleitner@gmail.com
-Ishai Haviv - ishrox123@gmail.com
-Seffi Eliash  - sefeli123@gmail.com
-Nerya Granot - neryagr@gmail.com
-Matanya Furst - matanyaf123@gmail.com
+<b>Won 1 place at the Hackton "Great Minds"</b><br>
